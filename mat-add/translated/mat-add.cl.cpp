@@ -4,9 +4,9 @@
 #include "mat-add.cl.hpp"
 ///////////////////////////////////////////////////////////
 
-__global__ void add_vec_gpu(const int *a, const int *b, int *res, const int len) {
-	const int idx = hipBlockDim_x * hipBlockIdx_x + hipThreadIdx_x;
-	if (idx < len)
-		res[idx] = a[idx] + b[idx];
+__global__ void add_vec_gpu(const int *a, const int *b, int *res,
+                            const int len) {
+  const int idx = hipBlockDim_x * hipBlockIdx_x + hipThreadIdx_x;
+  if (idx < len)
+    res[idx] = a[idx] + b[idx];
 }
-

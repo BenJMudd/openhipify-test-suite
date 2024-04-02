@@ -14,22 +14,26 @@ int main() {
 
   void *memobj = NULL;
 
+  hipError_t ret = hipSuccess;
+
   char string[MEM_SIZE];
 
   /* Create Memory Buffer */
-  hipMalloc((void **)&memobj, MEM_SIZE * sizeof(char));
+  ret = hipMalloc((void **)&memobj, MEM_SIZE * sizeof(char));
 
   /* Execute Kernel */
   hipLaunchKernelGGL(hello, dim3(1), dim3(1), 0, 0, (char *)memobj);
 
   /* Copy results from the memory buffer */
-  hipMemcpy(string, memobj, MEM_SIZE * sizeof(char), hipMemcpyDeviceToHost);
+  ret =
+      hipMemcpy(string, memobj, MEM_SIZE * sizeof(char), hipMemcpyDeviceToHost);
 
   /* Display Result */
   puts(string);
 
   /* Finalization */
-  hipFree(memobj);
+
+  ret = hipFree(memobj);
 
   return 0;
 }

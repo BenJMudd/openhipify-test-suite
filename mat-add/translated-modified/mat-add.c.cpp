@@ -10,6 +10,12 @@
 
 #include <sys/time.h>
 #include <time.h>
+/* gpu */
+#ifdef __APPLE__
+#include <OpenCL/opencl.h>
+#else
+#include <CL/cl.h>
+#endif
 
 #define MEM_SIZE (128)
 #define MAX_SOURCE_SIZE (0x100000)
@@ -86,15 +92,60 @@ int main(void) {
   void *a_buff, *b_buff, *c_buff;
   a_buff = b_buff = c_buff = NULL;
 
-  int ret = 1;
+  hipError_t ret = hipSuccess;
 
+  /* Load the source code containing the kernel */
+  // Platform
+
+  if (ret != hipSuccess) {
+    printf("Failed to get platform ID.\n");
+    goto error;
+  }
+  // Device
+
+  if (ret != hipSuccess) {
+    printf("Failed to get device ID.\n");
+    goto error;
+  }
+  // Context
+  //&ret);
+  if (ret != hipSuccess) {
+    printf("Failed to create OpenCL context.\n");
+    goto error;
+  }
+
+  if (ret != hipSuccess) {
+    printf("Failed to create command queue %d\n", (int)ret);
+    goto error;
+  }
   // Memory Buffer
-  hipMalloc((void **)&a_buff, data_size);
-  hipMalloc((void **)&b_buff, data_size);
-  hipMalloc((void **)&c_buff, data_size);
+  ret = hipMalloc((void **)&a_buff, data_size);
+  ret = hipMalloc((void **)&b_buff, data_size);
+  ret = hipMalloc((void **)&c_buff, data_size);
 
-  hipMemcpy(a_buff, (void *)a, data_size, hipMemcpyHostToDevice);
-  hipMemcpy(b_buff, (void *)b, data_size, hipMemcpyHostToDevice);
+  ret = hipMemcpy(a_buff, (void *)a, data_size, hipMemcpyHostToDevice);
+  ret = hipMemcpy(b_buff, (void *)b, data_size, hipMemcpyHostToDevice);
+  if (ret != hipSuccess) {
+    printf("Failed to copy date from host to device: %d\n", (int)ret);
+    goto error;
+  }
+  // Create Kernel Program from source
+
+  // Create OpenCL Kernel
+
+  if (ret != hipSuccess) {
+    printf("Failed to create kernel %d\n", (int)ret);
+    goto error;
+  }
+
+  if (ret != hipSuccess) {
+    printf("Failed to set kernel arguments %d\n", (int)ret);
+    goto error;
+  }
+
+  /* Execute OpenCL Kernel */
+  // executed using a single work-item
+  // ret = clEnqueueTask(command_queue, kernel, 0, NULL, NULL);
 
   size_t global_work_size, local_work_size;
   // Number of work items in each local work group
@@ -108,10 +159,18 @@ int main(void) {
   hipLaunchKernelGGL(add_vec_gpu, dim3(global_work_size), dim3(local_work_size),
                      0, 0, (const int *)a_buff, (const int *)b_buff,
                      (int *)c_buff, len);
+  if (ret != hipSuccess) {
+    printf("Failed to execute kernel for execution %d\n", (int)ret);
+    goto error;
+  }
 
   init_vec(c_d, len, 0);
   /* Copy results from the memory buffer */
-  hipMemcpy((void *)c_d, c_buff, data_size, hipMemcpyDeviceToHost);
+  ret = hipMemcpy((void *)c_d, c_buff, data_size, hipMemcpyDeviceToHost);
+  if (ret != hipSuccess) {
+    printf("Failed to copy data from device to host %d\n", (int)ret);
+    goto error;
+  }
 
   /* Display Result */
   printf("c: ");

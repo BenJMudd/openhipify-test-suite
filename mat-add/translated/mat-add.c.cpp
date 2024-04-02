@@ -91,69 +91,55 @@ int main(void) {
 
   /* vector addition, gpu version  */
   void *a_buff, *b_buff, *c_buff;
+  a_buff = b_buff = c_buff = NULL;
 
-  
-  cl_uint ret_num_platforms;
-
-  
-  cl_uint ret_num_devices;
-
-  
-  
-  
-
-  
-  cl_int ret;
+  hipError_t ret = hipSuccess;
 
   /* Load the source code containing the kernel */
   // Platform
-  
-  if (ret != CL_SUCCESS) {
+
+  if (ret != hipSuccess) {
     printf("Failed to get platform ID.\n");
     goto error;
   }
   // Device
-  
-  if (ret != CL_SUCCESS) {
+
+  if (ret != hipSuccess) {
     printf("Failed to get device ID.\n");
     goto error;
   }
   // Context
-   //&ret);
-  if (ret != CL_SUCCESS) {
+  //&ret);
+  if (ret != hipSuccess) {
     printf("Failed to create OpenCL context.\n");
     goto error;
   }
-  
-  if (ret != CL_SUCCESS) {
+
+  if (ret != hipSuccess) {
     printf("Failed to create command queue %d\n", (int)ret);
     goto error;
   }
   // Memory Buffer
-  hipMalloc((void**)&a_buff,data_size);
-  hipMalloc((void**)&b_buff,data_size);
-  hipMalloc((void**)&c_buff,data_size);
+  ret = hipMalloc((void **)&a_buff, data_size);
+  ret = hipMalloc((void **)&b_buff, data_size);
+  ret = hipMalloc((void **)&c_buff, data_size);
 
-  hipMemcpy(a_buff,(void *)a,data_size,hipMemcpyHostToDevice);
-  hipMemcpy(b_buff,(void *)b,data_size,hipMemcpyHostToDevice);
-  if (ret != CL_SUCCESS) {
+  ret = hipMemcpy(a_buff, (void *)a, data_size, hipMemcpyHostToDevice);
+  ret = hipMemcpy(b_buff, (void *)b, data_size, hipMemcpyHostToDevice);
+  if (ret != hipSuccess) {
     printf("Failed to copy date from host to device: %d\n", (int)ret);
     goto error;
   }
   // Create Kernel Program from source
-  
 
   // Create OpenCL Kernel
-  
-  if (ret != CL_SUCCESS) {
+
+  if (ret != hipSuccess) {
     printf("Failed to create kernel %d\n", (int)ret);
     goto error;
   }
-  
-  
-  
-  
-  if (ret != CL_SUCCESS) {
+
+  if (ret != hipSuccess) {
     printf("Failed to set kernel arguments %d\n", (int)ret);
     goto error;
   }
@@ -171,16 +157,18 @@ int main(void) {
 
   // size_t local_work_size[2] = { 8, 8 };
   // size_t global_work_size[2] = { 1, len };
-  hipLaunchKernelGGL(add_vec_gpu,dim3(global_work_size),dim3(local_work_size),0,0,(const  int *)a_buff,(const  int *)b_buff,( int *)c_buff,len);
-  if (ret != CL_SUCCESS) {
+  hipLaunchKernelGGL(add_vec_gpu, dim3(global_work_size), dim3(local_work_size),
+                     0, 0, (const int *)a_buff, (const int *)b_buff,
+                     (int *)c_buff, len);
+  if (ret != hipSuccess) {
     printf("Failed to execute kernel for execution %d\n", (int)ret);
     goto error;
   }
 
   init_vec(c_d, len, 0);
   /* Copy results from the memory buffer */
-  hipMemcpy((void *)c_d,c_buff,data_size,hipMemcpyDeviceToHost);
-  if (ret != CL_SUCCESS) {
+  ret = hipMemcpy((void *)c_d, c_buff, data_size, hipMemcpyDeviceToHost);
+  if (ret != hipSuccess) {
     printf("Failed to copy data from device to host %d\n", (int)ret);
     goto error;
   }
@@ -202,17 +190,10 @@ int main(void) {
 error:
 
   /* free device resources */
-  
-  
-  
-  
 
   hipFree(a_buff);
   hipFree(b_buff);
   hipFree(c_buff);
-
-  
-  
 
   /* free host resources */
   free(a);
