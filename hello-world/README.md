@@ -3,7 +3,7 @@ We have removed the inbuilt kernel loading code to use our provided auxiliary fu
 
 translated -> translated-modified
 we have removed some unused headers, and print statements referencing culled opencl
-values
+values. We have removed some comments referencing OpenCL specifics
 
 final result
 Compiles + runs isomorphically to the original program
