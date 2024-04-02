@@ -44,7 +44,8 @@ int main() {
   */
   ret = clGetPlatformIDs(1, &platform_id, &ret_num_platforms);
 
-  device_id = create_device();
+  ret = clGetDeviceIDs(platform_id, CL_DEVICE_TYPE_DEFAULT, 1, &device_id,
+                       &ret_num_devices);
   printf("platform_id: %ld\n", (int)platform_id);
   printf("ret: %s\n", (int)ret);
   printf("ret_num_platforms: %u\n", (int)ret_num_platforms);

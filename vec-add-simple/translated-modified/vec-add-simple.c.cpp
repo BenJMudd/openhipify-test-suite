@@ -33,6 +33,10 @@ int main() {
   for (int i = 0; i < num_elements; i++)
     printf("%d ", c[i]);
 
+  /* get platform number of OpenCL */
+
+  /* get device info */
+
   /* create OpenCL context, and make relation with device */
 
   /* create cmd queue, and make relation with device */
@@ -46,8 +50,6 @@ int main() {
   /* copy array a and b to buffer_a and buffer_b */
   hipMemcpy(buffer_a, a, data_size, hipMemcpyHostToDevice);
   hipMemcpy(buffer_b, b, data_size, hipMemcpyHostToDevice);
-
-  /* create OpenCL program from source code */
 
   /* create OpenCL kernel, which is used to make vector addition */
 

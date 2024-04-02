@@ -37,6 +37,25 @@ int main() {
   for (int i = 0; i < num_elements; i++)
     printf("%d ", c[i]);
 
+  /* get platform number of OpenCL */
+
+  printf("num_platforms: %d\n", (int)num_platforms);
+
+  /* allocate a segment of mem space, so as to store supported platform info */
+  cl_platform_id *platforms =
+      (cl_platform_id *)malloc(num_platforms * sizeof(cl_platform_id));
+
+  /* get platform info */
+
+  /* get device number on platform */
+
+  /* allocate a segment of mem space, to store device info, supported by
+   * platform */
+  cl_device_id *devices;
+  devices = (cl_device_id *)malloc(num_devices * sizeof(cl_device_id));
+
+  /* get device info */
+
   /* create OpenCL context, and make relation with device */
 
   /* create cmd queue, and make relation with device */
@@ -50,8 +69,6 @@ int main() {
   /* copy array a and b to buffer_a and buffer_b */
   hipMemcpy(buffer_a, a, data_size, hipMemcpyHostToDevice);
   hipMemcpy(buffer_b, b, data_size, hipMemcpyHostToDevice);
-
-  /* create OpenCL program from source code */
 
   /* create OpenCL kernel, which is used to make vector addition */
 
@@ -93,6 +110,8 @@ int main() {
   free(a);
   free(b);
   free(c);
+  free(platforms);
+  free(devices);
 
   return 0;
 }

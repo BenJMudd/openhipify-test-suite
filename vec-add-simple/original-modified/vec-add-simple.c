@@ -31,12 +31,37 @@ int main() {
   for (int i = 0; i < num_elements; i++)
     printf("%d ", c[i]);
 
-  cl_device_id device = create_device();
+  /* get platform number of OpenCL */
+  cl_uint num_platforms = 0;
+  clGetPlatformIDs(0, NULL, &num_platforms);
+  printf("num_platforms: %d\n", (int)num_platforms);
+
+  /* allocate a segment of mem space, so as to store supported platform info */
+  cl_platform_id *platforms =
+      (cl_platform_id *)malloc(num_platforms * sizeof(cl_platform_id));
+
+  /* get platform info */
+  clGetPlatformIDs(num_platforms, platforms, NULL);
+
+  /* get device number on platform */
+  cl_uint num_devices = 0;
+  clGetDeviceIDs(platforms[0], CL_DEVICE_TYPE_GPU, 0, NULL, &num_devices);
+
+  /* allocate a segment of mem space, to store device info, supported by
+   * platform */
+  cl_device_id *devices;
+  devices = (cl_device_id *)malloc(num_devices * sizeof(cl_device_id));
+
+  /* get device info */
+  clGetDeviceIDs(platforms[0], CL_DEVICE_TYPE_GPU, num_devices, devices, NULL);
+
   /* create OpenCL context, and make relation with device */
-  cl_context context = clCreateContext(NULL, 1, &device, NULL, NULL, NULL);
+  cl_context context =
+      clCreateContext(NULL, num_devices, devices, NULL, NULL, NULL);
 
   /* create cmd queue, and make relation with device */
-  cl_command_queue cmd_queue = clCreateCommandQueue(context, device, 0, NULL);
+  cl_command_queue cmd_queue =
+      clCreateCommandQueue(context, devices[0], 0, NULL);
 
   /* create 3 buffer object, to store data of array */
   cl_mem buffer_a, buffer_b, buffer_c;
@@ -50,8 +75,7 @@ int main() {
   clEnqueueWriteBuffer(cmd_queue, buffer_b, CL_FALSE, 0, data_size, b, 0, NULL,
                        NULL);
 
-  /* create OpenCL program from source code */
-  cl_program program = build_program(context, device, "kernel.cl");
+  cl_program program = build_program(context, *devices, "kernel.cl");
 
   /* create OpenCL kernel, which is used to make vector addition */
   cl_kernel kernel = clCreateKernel(program, "vec_add", NULL);
@@ -101,6 +125,8 @@ int main() {
   free(a);
   free(b);
   free(c);
+  free(platforms);
+  free(devices);
 
   return 0;
 }

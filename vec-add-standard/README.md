@@ -1,4 +1,4 @@
-Test case from OpenCL-101: mat-add
+Test case from OpenCL-101: vec-add-standard
 
 Original -> original-modified
 We have removed the inbuilt kernel loading code to use our provided auxiliary functions
