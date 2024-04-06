@@ -1,0 +1,64 @@
+ System minor 1
+ System major 6
+ agent prop name NVIDIA GeForce GTX 1060 6GB
+hip Device prop succeeded 
+PASSED!
+ System minor 1
+ System major 6
+ agent prop name NVIDIA GeForce GTX 1060 6GB
+hip Device prop succeeded 
+PASSED!
+ System minor 1
+ System major 6
+ agent prop name NVIDIA GeForce GTX 1060 6GB
+hip Device prop succeeded 
+PASSED!
+ System minor 1
+ System major 6
+ agent prop name NVIDIA GeForce GTX 1060 6GB
+hip Device prop succeeded 
+PASSED!
+ System minor 1
+ System major 6
+ agent prop name NVIDIA GeForce GTX 1060 6GB
+hip Device prop succeeded 
+PASSED!
+ System minor 1
+ System major 6
+ agent prop name NVIDIA GeForce GTX 1060 6GB
+hip Device prop succeeded 
+PASSED!
+ System minor 1
+ System major 6
+ agent prop name NVIDIA GeForce GTX 1060 6GB
+hip Device prop succeeded 
+PASSED!
+ System minor 1
+ System major 6
+ agent prop name NVIDIA GeForce GTX 1060 6GB
+hip Device prop succeeded 
+PASSED!
+ System minor 1
+ System major 6
+ agent prop name NVIDIA GeForce GTX 1060 6GB
+hip Device prop succeeded 
+PASSED!
+ System minor 1
+ System major 6
+ agent prop name NVIDIA GeForce GTX 1060 6GB
+hip Device prop succeeded 
+PASSED!
+
+ Performance counter stats for './hip 2' (10 runs):
+
+          7,058.96 msec task-clock                #    0.995 CPUs utilized            ( +-  0.06% )
+                84      context-switches          #   11.877 /sec                     ( +-  6.06% )
+                 0      cpu-migrations            #    0.000 /sec                   
+           587,945      page-faults               #   83.128 K/sec                    ( +-  0.04% )
+    32,500,504,041      cycles                    #    4.595 GHz                      ( +-  0.04% )
+    35,882,734,823      instructions              #    1.10  insn per cycle           ( +-  0.02% )
+     4,004,283,285      branches                  #  566.154 M/sec                    ( +-  0.04% )
+        16,998,683      branch-misses             #    0.42% of all branches          ( +-  1.06% )
+
+           7.09363 +- 0.00411 seconds time elapsed  ( +-  0.06% )
+

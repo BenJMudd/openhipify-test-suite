@@ -1,0 +1,12 @@
+kernel.cl.cpp
+Original: 254
+Translated: 437
+Pretty: 437
+Difference (orig-trans): 183
+Difference (orig-pretty): 183
+vec-add-simple.c.cpp
+Original: 3976
+Translated: 2394
+Pretty: 2076
+Difference (orig-trans): -1582
+Difference (orig-pretty): -1900

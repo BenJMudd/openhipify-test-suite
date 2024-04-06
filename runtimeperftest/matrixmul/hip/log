@@ -1,0 +1,20 @@
+setup time: 0.130518
+kernel time: 0.016011
+
+ Performance counter stats for './hip 1024 1 2':
+
+            147.49 msec task-clock                #    0.848 CPUs utilized          
+                52      context-switches          #  352.571 /sec                   
+                 1      cpu-migrations            #    6.780 /sec                   
+             5,061      page-faults               #   34.315 K/sec                  
+       661,111,855      cycles                    #    4.482 GHz                    
+       732,372,020      instructions              #    1.11  insn per cycle         
+       168,264,531      branches                  #    1.141 G/sec                  
+         1,481,979      branch-misses             #    0.88% of all branches        
+
+       0.173835567 seconds time elapsed
+
+       0.031966000 seconds user
+       0.115877000 seconds sys
+
+

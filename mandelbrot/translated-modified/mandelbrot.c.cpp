@@ -18,7 +18,7 @@ int main() {
 
   /* Data and buffers    */
   // Define Mandelbrot Settings
-  int iterations = 2000;
+  int iterations = 99999999;
   float x_min = -2;
   float x_max = 2;
   float y_min = -1.5f;
@@ -87,9 +87,9 @@ int main() {
   hipMemcpy(ans, dans, sizeof(int) * nreals,
             hipMemcpyDeviceToHost); // <=====GET OUTPUT
 
-  for (int i = 0; i < nreals; i++) {
-    printf("%d ", ans[i]);
-  }
+  // for (int i = 0; i < nreals; i++) {
+  //   printf("%d ", ans[i]);
+  // }
 
   /* Deallocate resources */
 

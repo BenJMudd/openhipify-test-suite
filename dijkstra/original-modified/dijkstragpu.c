@@ -7,7 +7,7 @@
 #define MAX_SOURCE_SIZE (0x100000)
 int main() {
   srand(time(NULL));
-  int n = 452;
+  int n = 9999;
   float *matrix = malloc(sizeof(float) * n * n);
   float *visited = malloc(sizeof(float) * n);
   float *minimum = malloc(sizeof(float) * n);
@@ -111,16 +111,6 @@ int main() {
   clock_t toc = clock();
   clEnqueueReadBuffer(command_queue, Matrix, CL_TRUE, 0, sizeof(float) * n * n,
                       matrix, 0, NULL, NULL);
-  FILE *fq = fopen("gpuanswer452.txt", "w");
-  if (fq == NULL) {
-    printf("Error opening file!\n");
-    return 0;
-  }
-  for (i = 0; i < n; i++) {
-    for (j = 0; j < n; j++) {
-      fprintf(fq, "%f\n", matrix[i * n + j]);
-    }
-  }
   cl_ulong time_start, time_end;
   double total_time;
   free(matrix);

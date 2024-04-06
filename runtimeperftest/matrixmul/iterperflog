@@ -1,0 +1,450 @@
+ITERATIONS:10
+###HIP
+setup time: 4.343893
+kernel time: 8.427838
+
+ Performance counter stats for './hip/hip 4096 10':
+
+         12,926.97 msec task-clock                #    0.999 CPUs utilized          
+               303      context-switches          #   23.439 /sec                   
+                 0      cpu-migrations            #    0.000 /sec                   
+           493,544      page-faults               #   38.179 K/sec                  
+    60,310,657,267      cycles                    #    4.665 GHz                    
+    98,756,643,058      instructions              #    1.64  insn per cycle         
+    19,878,525,596      branches                  #    1.538 G/sec                  
+        14,191,933      branch-misses             #    0.07% of all branches        
+
+      12.945750220 seconds time elapsed
+
+      12.252037000 seconds user
+       0.676222000 seconds sys
+
+
+###
+###OPENCL
+setup time: 5.158232
+kernel time: 8.604921
+
+ Performance counter stats for './opencl/opencl 4096 10':
+
+         14,076.63 msec task-clock                #    0.991 CPUs utilized          
+               690      context-switches          #   49.017 /sec                   
+                 2      cpu-migrations            #    0.142 /sec                   
+           823,156      page-faults               #   58.477 K/sec                  
+    65,707,001,415      cycles                    #    4.668 GHz                    
+    99,812,570,442      instructions              #    1.52  insn per cycle         
+    20,140,995,279      branches                  #    1.431 G/sec                  
+        20,697,069      branch-misses             #    0.10% of all branches        
+
+      14.200589160 seconds time elapsed
+
+      12.448961000 seconds user
+       1.627080000 seconds sys
+
+
+###
+ITERATIONS:20
+###HIP
+setup time: 8.803530
+kernel time: 16.828697
+
+ Performance counter stats for './hip/hip 4096 20':
+
+         25,940.32 msec task-clock                #    0.999 CPUs utilized          
+               474      context-switches          #   18.273 /sec                   
+                 7      cpu-migrations            #    0.270 /sec                   
+           985,095      page-faults               #   37.975 K/sec                  
+   121,130,962,620      cycles                    #    4.670 GHz                    
+   198,231,815,543      instructions              #    1.64  insn per cycle         
+    39,904,344,462      branches                  #    1.538 G/sec                  
+        28,922,190      branch-misses             #    0.07% of all branches        
+
+      25.958983422 seconds time elapsed
+
+      24.600262000 seconds user
+       1.340014000 seconds sys
+
+
+###
+###OPENCL
+setup time: 10.505615
+kernel time: 17.237650
+
+ Performance counter stats for './opencl/opencl 4096 20':
+
+         28,407.68 msec task-clock                #    0.993 CPUs utilized          
+             1,416      context-switches          #   49.846 /sec                   
+                12      cpu-migrations            #    0.422 /sec                   
+         1,642,468      page-faults               #   57.818 K/sec                  
+   132,574,969,117      cycles                    #    4.667 GHz                    
+   199,405,275,360      instructions              #    1.50  insn per cycle         
+    40,277,393,870      branches                  #    1.418 G/sec                  
+        41,197,021      branch-misses             #    0.10% of all branches        
+
+      28.621955254 seconds time elapsed
+
+      25.152830000 seconds user
+       3.258698000 seconds sys
+
+
+###
+ITERATIONS:30
+###HIP
+setup time: 13.217382
+kernel time: 25.243041
+
+ Performance counter stats for './hip/hip 4096 30':
+
+         38,916.55 msec task-clock                #    1.000 CPUs utilized          
+               725      context-switches          #   18.630 /sec                   
+                 0      cpu-migrations            #    0.000 /sec                   
+         1,476,649      page-faults               #   37.944 K/sec                  
+   181,913,920,381      cycles                    #    4.674 GHz                    
+   294,769,353,644      instructions              #    1.62  insn per cycle         
+    59,382,700,476      branches                  #    1.526 G/sec                  
+        40,093,089      branch-misses             #    0.07% of all branches        
+
+      38.931728523 seconds time elapsed
+
+      37.003352000 seconds user
+       1.916173000 seconds sys
+
+
+###
+###OPENCL
+setup time: 15.816397
+kernel time: 25.864506
+
+ Performance counter stats for './opencl/opencl 4096 30':
+
+         42,664.77 msec task-clock                #    0.992 CPUs utilized          
+             2,127      context-switches          #   49.854 /sec                   
+                11      cpu-migrations            #    0.258 /sec                   
+         2,461,773      page-faults               #   57.700 K/sec                  
+   199,271,103,368      cycles                    #    4.671 GHz                    
+   300,782,997,563      instructions              #    1.51  insn per cycle         
+    60,740,769,902      branches                  #    1.424 G/sec                  
+        60,825,595      branch-misses             #    0.10% of all branches        
+
+      43.007678235 seconds time elapsed
+
+      37.842012000 seconds user
+       4.818728000 seconds sys
+
+
+###
+ITERATIONS:40
+###HIP
+setup time: 17.661660
+kernel time: 33.581389
+
+ Performance counter stats for './hip/hip 4096 40':
+
+         51,854.36 msec task-clock                #    1.000 CPUs utilized          
+               957      context-switches          #   18.456 /sec                   
+                 8      cpu-migrations            #    0.154 /sec                   
+         1,968,196      page-faults               #   37.956 K/sec                  
+   242,464,029,975      cycles                    #    4.676 GHz                    
+   400,406,525,086      instructions              #    1.65  insn per cycle         
+    80,556,506,167      branches                  #    1.554 G/sec                  
+        55,177,509      branch-misses             #    0.07% of all branches        
+
+      51.868396316 seconds time elapsed
+
+      49.390003000 seconds user
+       2.468100000 seconds sys
+
+
+###
+###OPENCL
+setup time: 21.116459
+kernel time: 34.316697
+
+ Performance counter stats for './opencl/opencl 4096 40':
+
+         56,762.19 msec task-clock                #    0.993 CPUs utilized          
+             2,757      context-switches          #   48.571 /sec                   
+                31      cpu-migrations            #    0.546 /sec                   
+         3,281,079      page-faults               #   57.804 K/sec                  
+   264,924,489,890      cycles                    #    4.667 GHz                    
+   403,132,251,817      instructions              #    1.52  insn per cycle         
+    81,381,590,038      branches                  #    1.434 G/sec                  
+        82,299,027      branch-misses             #    0.10% of all branches        
+
+      57.171375508 seconds time elapsed
+
+      50.306962000 seconds user
+       6.460271000 seconds sys
+
+
+###
+ITERATIONS:50
+###HIP
+setup time: 22.100497
+kernel time: 41.858290
+
+ Performance counter stats for './hip/hip 4096 50':
+
+         64,720.71 msec task-clock                #    1.000 CPUs utilized          
+             1,107      context-switches          #   17.104 /sec                   
+                 7      cpu-migrations            #    0.108 /sec                   
+         2,459,748      page-faults               #   38.006 K/sec                  
+   302,551,664,144      cycles                    #    4.675 GHz                    
+   483,395,333,267      instructions              #    1.60  insn per cycle         
+    97,510,341,834      branches                  #    1.507 G/sec                  
+        68,155,909      branch-misses             #    0.07% of all branches        
+
+      64.732670282 seconds time elapsed
+
+      61.469295000 seconds user
+       3.255856000 seconds sys
+
+
+###
+###OPENCL
+setup time: 26.473861
+kernel time: 42.863929
+
+ Performance counter stats for './opencl/opencl 4096 50':
+
+         71,005.23 msec task-clock                #    0.993 CPUs utilized          
+             3,587      context-switches          #   50.517 /sec                   
+                41      cpu-migrations            #    0.577 /sec                   
+         4,100,407      page-faults               #   57.748 K/sec                  
+   331,232,986,471      cycles                    #    4.665 GHz                    
+   497,025,838,185      instructions              #    1.50  insn per cycle         
+   100,469,866,270      branches                  #    1.415 G/sec                  
+       117,073,588      branch-misses             #    0.12% of all branches        
+
+      71.509729349 seconds time elapsed
+
+      62.831143000 seconds user
+       8.169969000 seconds sys
+
+
+###
+ITERATIONS:60
+###HIP
+setup time: 26.541339
+kernel time: 50.335798
+
+ Performance counter stats for './hip/hip 4096 60':
+
+         77,793.23 msec task-clock                #    1.000 CPUs utilized          
+             1,501      context-switches          #   19.295 /sec                   
+                 2      cpu-migrations            #    0.026 /sec                   
+         2,951,302      page-faults               #   37.938 K/sec                  
+   363,610,616,201      cycles                    #    4.674 GHz                    
+   582,459,486,751      instructions              #    1.60  insn per cycle         
+   117,459,687,855      branches                  #    1.510 G/sec                  
+        81,025,179      branch-misses             #    0.07% of all branches        
+
+      77.803577422 seconds time elapsed
+
+      73.864522000 seconds user
+       3.932027000 seconds sys
+
+
+###
+###OPENCL
+setup time: 31.739600
+kernel time: 51.473992
+
+ Performance counter stats for './opencl/opencl 4096 60':
+
+         85,214.16 msec task-clock                #    0.993 CPUs utilized          
+             4,292      context-switches          #   50.367 /sec                   
+                15      cpu-migrations            #    0.176 /sec                   
+         4,919,748      page-faults               #   57.734 K/sec                  
+   397,815,548,952      cycles                    #    4.668 GHz                    
+   603,077,097,785      instructions              #    1.52  insn per cycle         
+   121,796,930,848      branches                  #    1.429 G/sec                  
+       123,684,846      branch-misses             #    0.10% of all branches        
+
+      85.820984115 seconds time elapsed
+
+      75.403260000 seconds user
+       9.818174000 seconds sys
+
+
+###
+ITERATIONS:70
+###HIP
+setup time: 31.003279
+kernel time: 58.691234
+
+ Performance counter stats for './hip/hip 4096 70':
+
+         90,756.90 msec task-clock                #    1.000 CPUs utilized          
+             1,678      context-switches          #   18.489 /sec                   
+                 2      cpu-migrations            #    0.022 /sec                   
+         3,442,853      page-faults               #   37.935 K/sec                  
+   424,159,711,729      cycles                    #    4.674 GHz                    
+   687,590,077,079      instructions              #    1.62  insn per cycle         
+   138,539,475,580      branches                  #    1.526 G/sec                  
+        95,390,106      branch-misses             #    0.07% of all branches        
+
+      90.767877121 seconds time elapsed
+
+      86.279219000 seconds user
+       4.483959000 seconds sys
+
+
+###
+###OPENCL
+setup time: 37.072417
+kernel time: 60.015159
+
+ Performance counter stats for './opencl/opencl 4096 70':
+
+         99,425.65 msec task-clock                #    0.993 CPUs utilized          
+             5,316      context-switches          #   53.467 /sec                   
+                27      cpu-migrations            #    0.272 /sec                   
+         5,739,061      page-faults               #   57.722 K/sec                  
+   464,012,514,400      cycles                    #    4.667 GHz                    
+   706,105,076,486      instructions              #    1.52  insn per cycle         
+   142,561,714,428      branches                  #    1.434 G/sec                  
+       145,261,388      branch-misses             #    0.10% of all branches        
+
+     100.153012954 seconds time elapsed
+
+      88.311276000 seconds user
+      11.109870000 seconds sys
+
+
+###
+ITERATIONS:80
+###HIP
+setup time: 35.437868
+kernel time: 67.111196
+
+ Performance counter stats for './hip/hip 4096 80':
+
+        103,765.93 msec task-clock                #    1.000 CPUs utilized          
+             1,843      context-switches          #   17.761 /sec                   
+                11      cpu-migrations            #    0.106 /sec                   
+         3,934,390      page-faults               #   37.916 K/sec                  
+   485,040,660,162      cycles                    #    4.674 GHz                    
+   780,707,300,403      instructions              #    1.61  insn per cycle         
+   157,381,131,893      branches                  #    1.517 G/sec                  
+       109,567,952      branch-misses             #    0.07% of all branches        
+
+     103.775164610 seconds time elapsed
+
+      98.696299000 seconds user
+       5.076221000 seconds sys
+
+
+###
+###OPENCL
+setup time: 42.357641
+kernel time: 68.538368
+
+ Performance counter stats for './opencl/opencl 4096 80':
+
+        113,542.21 msec task-clock                #    0.993 CPUs utilized          
+             6,814      context-switches          #   60.013 /sec                   
+                26      cpu-migrations            #    0.229 /sec                   
+         6,558,372      page-faults               #   57.762 K/sec                  
+   529,729,674,456      cycles                    #    4.665 GHz                    
+   801,384,933,280      instructions              #    1.51  insn per cycle         
+   161,900,089,778      branches                  #    1.426 G/sec                  
+       162,594,895      branch-misses             #    0.10% of all branches        
+
+     114.336506379 seconds time elapsed
+
+     100.571804000 seconds user
+      12.975587000 seconds sys
+
+
+###
+ITERATIONS:90
+###HIP
+setup time: 39.838575
+kernel time: 75.465289
+
+ Performance counter stats for './hip/hip 4096 90':
+
+        116,673.79 msec task-clock                #    1.000 CPUs utilized          
+             2,113      context-switches          #   18.110 /sec                   
+                11      cpu-migrations            #    0.094 /sec                   
+         4,425,952      page-faults               #   37.934 K/sec                  
+   545,490,844,294      cycles                    #    4.675 GHz                    
+   897,189,024,993      instructions              #    1.64  insn per cycle         
+   180,575,729,752      branches                  #    1.548 G/sec                  
+       118,462,195      branch-misses             #    0.07% of all branches        
+
+     116.679725888 seconds time elapsed
+
+     111.155505000 seconds user
+       5.523776000 seconds sys
+
+
+###
+###OPENCL
+setup time: 47.716666
+kernel time: 77.274051
+
+ Performance counter stats for './opencl/opencl 4096 90':
+
+        127,983.34 msec task-clock                #    0.993 CPUs utilized          
+             6,545      context-switches          #   51.139 /sec                   
+                11      cpu-migrations            #    0.086 /sec                   
+         7,377,630      page-faults               #   57.645 K/sec                  
+   597,533,634,566      cycles                    #    4.669 GHz                    
+   903,609,439,023      instructions              #    1.51  insn per cycle         
+   182,520,662,527      branches                  #    1.426 G/sec                  
+       186,283,358      branch-misses             #    0.10% of all branches        
+
+     128.856225746 seconds time elapsed
+
+     113.574108000 seconds user
+      14.410237000 seconds sys
+
+
+###
+ITERATIONS:100
+###HIP
+setup time: 44.248535
+kernel time: 83.840204
+
+ Performance counter stats for './hip/hip 4096 100':
+
+        129,603.72 msec task-clock                #    1.000 CPUs utilized          
+             2,318      context-switches          #   17.885 /sec                   
+                 6      cpu-migrations            #    0.046 /sec                   
+         4,917,490      page-faults               #   37.943 K/sec                  
+   606,525,850,311      cycles                    #    4.680 GHz                    
+   992,187,473,158      instructions              #    1.64  insn per cycle         
+   199,767,423,904      branches                  #    1.541 G/sec                  
+       132,267,494      branch-misses             #    0.07% of all branches        
+
+     129.610052288 seconds time elapsed
+
+     123.499260000 seconds user
+       6.112161000 seconds sys
+
+
+###
+###OPENCL
+setup time: 53.005283
+kernel time: 85.735375
+
+ Performance counter stats for './opencl/opencl 4096 100':
+
+        142,084.69 msec task-clock                #    0.993 CPUs utilized          
+             7,079      context-switches          #   49.822 /sec                   
+                19      cpu-migrations            #    0.134 /sec                   
+         8,196,950      page-faults               #   57.691 K/sec                  
+   663,738,771,860      cycles                    #    4.671 GHz                    
+ 1,002,878,613,637      instructions              #    1.51  insn per cycle         
+   202,601,783,564      branches                  #    1.426 G/sec                  
+       205,313,453      branch-misses             #    0.10% of all branches        
+
+     143.088697369 seconds time elapsed
+
+     125.982356000 seconds user
+      16.104721000 seconds sys
+
+
+###

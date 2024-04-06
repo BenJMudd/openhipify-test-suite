@@ -1,0 +1,12 @@
+hello.c.cpp
+Original: 3226
+Translated: 1876
+Pretty: 794
+Difference (orig-trans): -1350
+Difference (orig-pretty): -2432
+hello.cl.cpp
+Original: 349
+Translated: 489
+Pretty: 489
+Difference (orig-trans): 140
+Difference (orig-pretty): 140

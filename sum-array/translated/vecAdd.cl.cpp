@@ -7,9 +7,11 @@
 // OpenCL kernel. Each work item takes care of one element of c
 __global__ void vecAdd(double *a, double *b, double *c, const unsigned int n) {
   // Get our global thread ID
-  int id = hipBlockDim_x * hipBlockIdx_x + hipThreadIdx_x;
+  int x = hipBlockDim_x * hipBlockIdx_x + hipThreadIdx_x;
+  int y = hipBlockDim_y * hipBlockIdx_y + hipThreadIdx_y;
 
-  // Make sure we do not go out of bounds
-  if (id < n)
-    c[id] = a[id] + b[id];
+  int i = y * 10000 + x;
+  if (i < (100000000)) {
+    a[i] = b[i] + c[i];
+  }
 }

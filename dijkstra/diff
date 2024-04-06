@@ -1,0 +1,12 @@
+dijkstragpu.c.cpp
+Original: 4813
+Translated: 3070
+Pretty: 2832
+Difference (orig-trans): -1743
+Difference (orig-pretty): -1981
+dijkstragpu_kernel.cl.cpp
+Original: 1405
+Translated: 1173
+Pretty: 1127
+Difference (orig-trans): -232
+Difference (orig-pretty): -278

@@ -1,0 +1,12 @@
+mat-add.c.cpp
+Original: 6014
+Translated: 4839
+Pretty: 3981
+Difference (orig-trans): -1175
+Difference (orig-pretty): -2033
+mat-add.cl.cpp
+Original: 191
+Translated: 405
+Pretty: 405
+Difference (orig-trans): 214
+Difference (orig-pretty): 214

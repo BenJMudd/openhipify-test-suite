@@ -16,10 +16,17 @@
 #else
 #include <CL/cl.h>
 #endif
+#define WIDTH 10000
+#define HEIGHT 10000
+#define NUM (WIDTH * HEIGHT)
+
+#define THREADS_PER_BLOCK_X 16
+#define THREADS_PER_BLOCK_Y 16
+#define THREADS_PER_BLOCK_Z 1
 
 int main(int argc, char *argv[]) {
   // Length of vectors
-  unsigned int n = 100000;
+  unsigned int n = 100000000;
 
   // Host input vectors
   double *h_a;
@@ -55,14 +62,15 @@ int main(int argc, char *argv[]) {
     h_b[i] = cosf(i) * cosf(i);
   }
 
-  size_t globalSize, localSize;
   hipError_t err = hipSuccess;
 
   // Number of work items in each local work group
-  localSize = 64;
+  size_t globalSize[2] = {WIDTH / THREADS_PER_BLOCK_X,
+                          HEIGHT / THREADS_PER_BLOCK_Y};
 
   // Number of total work items - localSize must be devisor
-  globalSize = ceil(n / (float)localSize) * localSize;
+
+  size_t localSize[2] = {THREADS_PER_BLOCK_X, THREADS_PER_BLOCK_Y};
 
   // Bind to platform
 
@@ -90,7 +98,7 @@ int main(int argc, char *argv[]) {
   // Set the arguments to our compute kernel
 
   // Execute the kernel over the entire range of the data set
-  hipLaunchKernelGGL(vecAdd, dim3(globalSize), dim3(localSize), 0, 0,
+  hipLaunchKernelGGL(vecAdd, dim3(*(globalSize)), dim3(*(localSize)), 0, 0,
                      (double *)d_a, (double *)d_b, (double *)d_c, n);
 
   // Wait for the command queue to get serviced before reading back results
@@ -103,7 +111,7 @@ int main(int argc, char *argv[]) {
   double sum = 0;
   for (i = 0; i < n; i++)
     sum += h_c[i];
-  printf("final result: %f\n", sum / n);
+  // printf("final result: %f\n", sum / n);
 
   // release OpenCL resources
   hipFree(d_a);

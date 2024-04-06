@@ -1,0 +1,12 @@
+mandelbrot.c.cpp
+Original: 3673
+Translated: 2793
+Pretty: 2557
+Difference (orig-trans): -880
+Difference (orig-pretty): -1116
+mandelbrot.cl.cpp
+Original: 778
+Translated: 860
+Pretty: 860
+Difference (orig-trans): 82
+Difference (orig-pretty): 82

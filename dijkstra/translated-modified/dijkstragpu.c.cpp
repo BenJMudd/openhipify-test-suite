@@ -11,7 +11,7 @@
 #define MAX_SOURCE_SIZE (0x100000)
 int main() {
   srand(time(NULL));
-  int n = 452;
+  int n = 9999;
   float *matrix = (float *)malloc(sizeof(float) * n * n);
   float *visited = (float *)malloc(sizeof(float) * n);
   float *minimum = (float *)malloc(sizeof(float) * n);
@@ -80,16 +80,6 @@ int main() {
                      (int *)Index, (float *)Array, (int *)Path, (NULL), (NULL));
   clock_t toc = clock();
   hipMemcpy(matrix, Matrix, sizeof(float) * n * n, hipMemcpyDeviceToHost);
-  FILE *fq = fopen("gpuanswer452.txt", "w");
-  if (fq == NULL) {
-    printf("Error opening file!\n");
-    return 0;
-  }
-  for (i = 0; i < n; i++) {
-    for (j = 0; j < n; j++) {
-      fprintf(fq, "%f\n", matrix[i * n + j]);
-    }
-  }
   double total_time;
   free(matrix);
   free(visited);
