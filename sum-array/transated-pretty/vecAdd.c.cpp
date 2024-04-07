@@ -13,7 +13,7 @@
 
 int main(int argc, char *argv[]) {
   // Length of vectors
-  unsigned int n = 100000;
+  unsigned int n = 99999999;
 
   // Host input vectors
   double *h_a;

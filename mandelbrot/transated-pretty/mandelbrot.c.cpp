@@ -18,11 +18,11 @@ int main() {
 
   /* Data and buffers    */
   // Define Mandelbrot Settings
-  int iterations = 2000;
-  float x_min = -2;
-  float x_max = 2;
-  float y_min = -1.5f;
-  float y_max = 1.5f;
+  int iterations = 99999999;
+  float x_min = -2000.0f;
+  float x_max = 2000.0f;
+  float y_min = -1500.0f;
+  float y_max = 1500.0f;
   float x_step = .002f;
   float y_step = .002f;
 
@@ -62,7 +62,7 @@ int main() {
   // Number of work items in each local work group
   local_size = WG_SIZE;
   // Number of total work items - localSize must be devisor
-  global_size = (nreals - 1) / local_size + 1;
+  global_size = nreals / local_size;
   // size_t global_size[3] = {ARRAY_SIZE, 0, 0}; // for 3D data
   // size_t local_size[3] = {WG_SIZE, 0, 0};
   /* Enqueue kernel    */
@@ -74,7 +74,7 @@ int main() {
   hipMemcpy(ans, dans, sizeof(int) * nreals,
             hipMemcpyDeviceToHost); // <=====GET OUTPUT
 
-  for (int i = 0; i < nreals; i++) {
+  for (int i = 0; i < 100; i++) {
     printf("%d ", ans[i]);
   }
 

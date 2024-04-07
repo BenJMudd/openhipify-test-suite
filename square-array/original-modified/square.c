@@ -12,7 +12,7 @@ int main() {
   cl_kernel kernel;
   cl_command_queue queue;
   cl_int i, err;
-  long long int ARRAY_SIZE = 999999999; // size of arrays
+  long long int ARRAY_SIZE = 99999999; // size of arrays
   size_t local_size, global_size;
 
   /* Data and buffers    */
@@ -130,11 +130,10 @@ int main() {
   /* Read the kernel's output    */
   clEnqueueReadBuffer(queue, doutput, CL_TRUE, 0, bytes, houtput, 0, NULL,
                       NULL); // <=====GET OUTPUT
-
   /* Check result */
-  //   for (i = 0; i < 100; i++) {
-  //     printf("%f ", houtput[i]);
-  //   }
+  for (i = 0; i < 100; i++) {
+    printf("%f ", houtput[i]);
+  }
 
   /* Deallocate resources */
   clReleaseKernel(kernel);

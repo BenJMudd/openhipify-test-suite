@@ -10,17 +10,10 @@
 #else
 #include <CL/cl.h>
 #endif
-#define WIDTH 10000
-#define HEIGHT 10000
-#define NUM (WIDTH * HEIGHT)
-
-#define THREADS_PER_BLOCK_X 16
-#define THREADS_PER_BLOCK_Y 16
-#define THREADS_PER_BLOCK_Z 1
 
 int main(int argc, char *argv[]) {
   // Length of vectors
-  unsigned int n = 100000000;
+  unsigned int n = 99999999;
 
   // Host input vectors
   double *h_a;
@@ -56,15 +49,14 @@ int main(int argc, char *argv[]) {
     h_b[i] = cosf(i) * cosf(i);
   }
 
+  size_t globalSize, localSize;
   cl_int err;
 
   // Number of work items in each local work group
-  size_t globalSize[2] = {WIDTH / THREADS_PER_BLOCK_X,
-                          HEIGHT / THREADS_PER_BLOCK_Y};
+  localSize = 64;
 
   // Number of total work items - localSize must be devisor
-
-  size_t localSize[2] = {THREADS_PER_BLOCK_X, THREADS_PER_BLOCK_Y};
+  globalSize = ceil(n / (float)localSize) * localSize;
 
   // Bind to platform
   err = clGetPlatformIDs(1, &cpPlatform, NULL);
@@ -103,8 +95,8 @@ int main(int argc, char *argv[]) {
   err |= clSetKernelArg(kernel, 3, sizeof(unsigned int), &n);
 
   // Execute the kernel over the entire range of the data set
-  err = clEnqueueNDRangeKernel(queue, kernel, 2, NULL, globalSize, localSize, 0,
-                               NULL, NULL);
+  err = clEnqueueNDRangeKernel(queue, kernel, 1, NULL, &globalSize, &localSize,
+                               0, NULL, NULL);
 
   // Wait for the command queue to get serviced before reading back results
   clFinish(queue);
@@ -117,7 +109,7 @@ int main(int argc, char *argv[]) {
   double sum = 0;
   for (i = 0; i < n; i++)
     sum += h_c[i];
-  // printf("final result: %f\n", sum / n);
+  printf("final result: %f\n", sum / n);
 
   // release OpenCL resources
   clReleaseMemObject(d_a);

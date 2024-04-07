@@ -18,10 +18,10 @@ int main() {
   /* Data and buffers    */
   // Define Mandelbrot Settings
   int iterations = 99999999;
-  float x_min = -2;
-  float x_max = 2;
-  float y_min = -1.5f;
-  float y_max = 1.5f;
+  float x_min = -2000.0f;
+  float x_max = 2000.0f;
+  float y_min = -1500.0f;
+  float y_max = 1500.0f;
   float x_step = .002f;
   float y_step = .002f;
 
@@ -101,9 +101,9 @@ int main() {
   clEnqueueReadBuffer(queue, dans, CL_TRUE, 0, sizeof(int) * nreals, ans, 0,
                       NULL, NULL); // <=====GET OUTPUT
 
-  // for (int i = 0; i < nreals; i++) {
-  //   printf("%d ", ans[i]);
-  // }
+  for (int i = 0; i < 100; i++) {
+    printf("%d ", ans[i]);
+  }
 
   /* Deallocate resources */
   clReleaseKernel(kernel);

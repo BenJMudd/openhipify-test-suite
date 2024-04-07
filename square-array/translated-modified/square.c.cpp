@@ -13,7 +13,7 @@ int main() {
 
   hipError_t err;
   int i;
-  long long int ARRAY_SIZE = 999999999; // size of arrays
+  long long int ARRAY_SIZE = 99999999; // size of arrays
   size_t local_size, global_size;
 
   /* Data and buffers    */
@@ -88,7 +88,7 @@ int main() {
   hipGetDeviceProperties(&HIP_Prop, 0);
   local_size = HIP_Prop.maxThreadsPerBlock;
   // Number of total work items - localSize must be devisor
-  global_size = ceil(ARRAY_SIZE / (float)local_size) * local_size;
+  global_size = ARRAY_SIZE / (float)local_size;
   // printf("global=%u, local=%u\n", global_size, local_size);
   // size_t global_size[3] = {ARRAY_SIZE, 0, 0}; // for 3D data
   // size_t local_size[3] = {WG_SIZE, 0, 0};
@@ -115,7 +115,8 @@ int main() {
   */
   hipLaunchKernelGGL(square, dim3(global_size), dim3(local_size), 0, 0,
                      (float *)ddata, (float *)doutput, ARRAY_SIZE);
-  // clEnqueueNDRangeKernel(queue, kernel, 1, NULL, global_size, local_size, 0,
+  // clEnqueueNDRangeKernel(queue, kernel, 1, NULL, global_size, local_size,
+  // 0,
   // NULL, NULL);
 
   /* Wait for the command queue to get serviced before reading
@@ -125,9 +126,9 @@ int main() {
   hipMemcpy(houtput, doutput, bytes, hipMemcpyDeviceToHost); // <=====GET OUTPUT
 
   /* Check result */
-  // for (i = 0; i < 100; i++) {
-  //   printf("%f ", houtput[i]);
-  // }
+  for (i = 0; i < 100; i++) {
+    printf("%f ", houtput[i]);
+  }
 
   /* Deallocate resources */
 

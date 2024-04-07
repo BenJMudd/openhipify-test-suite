@@ -61,7 +61,7 @@ int main(void) {
   srand((unsigned)time(NULL));
 
   /* generate vector a and b */
-  int len = 1023;
+  int len = 99999999;
   int *a, *b, *c, *c_d;
   a = (int *)malloc(len * sizeof(int));
   b = (int *)malloc(len * sizeof(int));
@@ -71,17 +71,17 @@ int main(void) {
 
   // /* vector addition, cpu version */
   // printf("a: ");
-  // init_vec(a, len, 1);
+  init_vec(a, len, 1);
   // print_vec(a, len);
 
   // printf("b: ");
-  // rand_vec(b, len);
+  rand_vec(b, len);
   // print_vec(b, len);
 
   // printf("c: ");
   init_vec(c, len, 0);
   add_vec_cpu(a, b, c, len);
-  //  print_vec(c, len);
+  // print_vec(c, len);
 
   /* vector addition, gpu version  */
   cl_mem a_buff, b_buff, c_buff;
@@ -161,22 +161,20 @@ int main(void) {
 
   size_t global_work_size, local_work_size;
   // Number of work items in each local work group
-  local_work_size = len;
+  local_work_size = 256;
   // Number of total work items - localSize must be devisor
   global_work_size =
       (size_t)ceil(len / (float)local_work_size) * local_work_size;
 
   // size_t local_work_size[2] = { 8, 8 };
   // size_t global_work_size[2] = { 1, len };
-  for (int i = 0; i < 100; i++) {
 
-    ret = clEnqueueNDRangeKernel(command_queue, kernel, 1, NULL,
-                                 &global_work_size, &local_work_size, 0, NULL,
-                                 NULL);
-    if (ret != CL_SUCCESS) {
-      printf("Failed to execute kernel for execution %d\n", (int)ret);
-      goto error;
-    }
+  ret =
+      clEnqueueNDRangeKernel(command_queue, kernel, 1, NULL, &global_work_size,
+                             &local_work_size, 0, NULL, NULL);
+  if (ret != CL_SUCCESS) {
+    printf("Failed to execute kernel for execution %d\n", (int)ret);
+    goto error;
   }
 
   init_vec(c_d, len, 0);
@@ -191,13 +189,13 @@ int main(void) {
   /* Display Result */
   // printf("c: ");
   // print_vec(c_d, len);
-  // check_result(c, c_d, len);
+  check_result(c, c_d, len);
   // printf("len-1=%d, c_d[%d]==c[%d]: %d, c_d[%d]=%d, c[%d]=%d \n", len - 1,
   //        len - 1, len - 1, c_d[len - 1] == c[len - 1], len - 1, c_d[len - 1],
   //        len - 1, c[len - 1]);
 
   // printf("idx  c  c_d\n");
-  // for (int i = 0; i < len; i++) {
+  // for (int i = 0; i < 10; i++) {
   //   printf("%2d %2d %2d \n", i, c[i], c_d[i]);
   // }
 

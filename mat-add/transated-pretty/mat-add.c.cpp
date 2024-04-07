@@ -59,7 +59,7 @@ int main(void) {
   srand((unsigned)time(NULL));
 
   /* generate vector a and b */
-  int len = 64;
+  int len = 99999999;
   int *a, *b, *c, *c_d;
   a = (int *)malloc(len * sizeof(int));
   b = (int *)malloc(len * sizeof(int));
@@ -68,18 +68,18 @@ int main(void) {
   size_t data_size = len * sizeof(int);
 
   /* vector addition, cpu version */
-  printf("a: ");
+  // printf("a: ");
   init_vec(a, len, 1);
-  print_vec(a, len);
+  // print_vec(a, len);
 
-  printf("b: ");
+  // printf("b: ");
   rand_vec(b, len);
-  print_vec(b, len);
+  // print_vec(b, len);
 
-  printf("c: ");
+  // printf("c: ");
   init_vec(c, len, 0);
   add_vec_cpu(a, b, c, len);
-  print_vec(c, len);
+  // print_vec(c, len);
 
   /* vector addition, gpu version  */
   void *a_buff, *b_buff, *c_buff;
@@ -105,10 +105,9 @@ int main(void) {
 
   size_t global_work_size, local_work_size;
   // Number of work items in each local work group
-  local_work_size = len;
+  local_work_size = 256;
   // Number of total work items - localSize must be devisor
-  global_work_size =
-      (size_t)ceil(len / (float)local_work_size) * local_work_size;
+  global_work_size = (size_t)ceil(len / (float)local_work_size);
 
   // size_t local_work_size[2] = { 8, 8 };
   // size_t global_work_size[2] = { 1, len };
@@ -129,17 +128,17 @@ int main(void) {
   }
 
   /* Display Result */
-  printf("c: ");
-  print_vec(c_d, len);
+  // printf("c: ");
+  // print_vec(c_d, len);
   check_result(c, c_d, len);
-  printf("len-1=%d, c_d[%d]==c[%d]: %d, c_d[%d]=%d, c[%d]=%d \n", len - 1,
-         len - 1, len - 1, c_d[len - 1] == c[len - 1], len - 1, c_d[len - 1],
-         len - 1, c[len - 1]);
+  // printf("len-1=%d, c_d[%d]==c[%d]: %d, c_d[%d]=%d, c[%d]=%d \n", len - 1,
+  //        len - 1, len - 1, c_d[len - 1] == c[len - 1], len - 1, c_d[len - 1],
+  //        len - 1, c[len - 1]);
 
-  printf("idx  c  c_d\n");
-  for (int i = 0; i < len; i++) {
-    printf("%2d %2d %2d \n", i, c[i], c_d[i]);
-  }
+  // printf("idx  c  c_d\n");
+  // for (int i = 0; i < len; i++) {
+  //   printf("%2d %2d %2d \n", i, c[i], c_d[i]);
+  // }
 
   /* Finalization */
 error:
