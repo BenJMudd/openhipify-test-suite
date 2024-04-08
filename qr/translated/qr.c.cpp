@@ -28,7 +28,8 @@ int main() {
   /* Host/device data structures */
 
   size_t global_size, local_size;
-  hipError_t err, i, j, k, check;
+  hipError_t err = hipSuccess;
+  int i, j, k, check;
 
   /* Data and buffers */
   float a_mat[MATRIX_DIM][MATRIX_DIM], q_mat[MATRIX_DIM][MATRIX_DIM],
@@ -46,43 +47,44 @@ int main() {
 
   /* Create a device and context */
 
-  if (err < hipSuccessperror("Couldn't create a context");
-    exit(1);
-}
-
-/* Build the program */
-
-/* Create a kernel */
-
-  if (err < hipSuccessperror("Couldn't create a kernel");
+  if (err != hipSuccess) {
+    perror("Couldn't create a context");
     exit(1);
   }
-  ;
+
+  /* Build the program */
+
+  /* Create a kernel */
+
+  if (err != hipSuccess) {
+    perror("Couldn't create a kernel");
+    exit(1);
+  };
 
   /* Create buffer */
   err = hipMalloc((void **)&a_buffer, sizeof(a_mat));
   hipMemcpy(a_buffer, a_mat, sizeof(a_mat), hipMemcpyHostToDevice);
-  if (err < hipSuccessperror("Couldn't create a buffer");
+  if (err != hipSuccess) {
+    perror("Couldn't create a buffer");
     exit(1);
-  }
-  ;
+  };
   hipMalloc((void **)&q_buffer, sizeof(q_mat));
   hipMalloc((void **)&p_buffer, sizeof(q_mat));
   hipMalloc((void **)&prod_buffer, sizeof(q_mat));
 
   /* Create kernel arguments */
 
-  if (err < hipSuccessprintf("Couldn't set a kernel argument");
+  if (err != hipSuccess) {
+    printf("Couldn't set a kernel argument");
     exit(1);
-  }
-  ;
+  };
 
   /* Create a command queue */
 
-  if (err < hipSuccessperror("Couldn't create a command queue");
+  if (err != hipSuccess) {
+    perror("Couldn't create a command queue");
     exit(1);
-  }
-  ;
+  };
 
   /* Enqueue kernel */
   global_size = MATRIX_DIM;
@@ -90,14 +92,16 @@ int main() {
   hipLaunchKernelGGL(qr, dim3(global_size), dim3(local_size), 0, 0, *(NULL),
                      (float *)a_buffer, (float *)q_buffer, (float *)p_buffer,
                      (float *)prod_buffer);
-  if (err < hipSuccessperror("Couldn't enqueue the kernel");
+  if (err != hipSuccess) {
+    perror("Couldn't enqueue the kernel");
     exit(1);
   }
 
   /* Read the results */
   err = hipMemcpy(q_mat, q_buffer, sizeof(q_mat), hipMemcpyDeviceToHost);
   err = hipMemcpy(r_mat, a_buffer, sizeof(r_mat), hipMemcpyDeviceToHost);
-  if (err < hipSuccessperror("Couldn't read the buffers");
+  if (err != hipSuccess) {
+    perror("Couldn't read the buffers");
     exit(1);
   }
 
@@ -132,4 +136,4 @@ int main() {
   hipFree(prod_buffer);
 
   return 0;
-  }
+}

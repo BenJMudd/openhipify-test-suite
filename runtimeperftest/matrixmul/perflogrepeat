@@ -1,0 +1,1808 @@
+ARR_SIZE:1024
+###HIP
+setup time: 0.154085
+kernel time: 0.016500
+setup time: 0.086233
+kernel time: 0.012999
+setup time: 0.094097
+kernel time: 0.012993
+setup time: 0.101883
+kernel time: 0.012948
+setup time: 0.067655
+kernel time: 0.012979
+setup time: 0.068515
+kernel time: 0.013031
+setup time: 0.094898
+kernel time: 0.012969
+setup time: 0.068573
+kernel time: 0.013027
+setup time: 0.073305
+kernel time: 0.012997
+setup time: 0.067774
+kernel time: 0.012982
+setup time: 0.088173
+kernel time: 0.013053
+setup time: 0.071265
+kernel time: 0.012977
+setup time: 0.068406
+kernel time: 0.012994
+setup time: 0.067638
+kernel time: 0.012987
+setup time: 0.068385
+kernel time: 0.013017
+setup time: 0.072506
+kernel time: 0.013030
+setup time: 0.067747
+kernel time: 0.012990
+setup time: 0.076333
+kernel time: 0.012972
+setup time: 0.067993
+kernel time: 0.013003
+setup time: 0.068322
+kernel time: 0.013007
+
+ Performance counter stats for './hip/hip 1024 1' (20 runs):
+
+            105.87 msec task-clock                #    0.895 CPUs utilized            ( +-  3.14% )
+                41      context-switches          #  368.342 /sec                     ( +-  3.65% )
+                 2      cpu-migrations            #   17.968 /sec                     ( +-  4.10% )
+             5,058      page-faults               #   45.441 K/sec                    ( +-  0.01% )
+       467,968,486      cycles                    #    4.204 GHz                      ( +-  1.58% )
+       617,918,027      instructions              #    1.28  insn per cycle           ( +-  0.87% )
+       143,108,777      branches                  #    1.286 G/sec                    ( +-  0.81% )
+           794,132      branch-misses             #    0.55% of all branches          ( +-  5.17% )
+
+           0.11834 +- 0.00479 seconds time elapsed  ( +-  4.05% )
+
+###
+###OPENCL
+setup time: 0.106654
+kernel time: 0.014157
+setup time: 0.075720
+kernel time: 0.014168
+setup time: 0.100719
+kernel time: 0.014307
+setup time: 0.140648
+kernel time: 0.014156
+setup time: 0.096958
+kernel time: 0.014257
+setup time: 0.075302
+kernel time: 0.014233
+setup time: 0.097528
+kernel time: 0.014208
+setup time: 0.075999
+kernel time: 0.014194
+setup time: 0.088958
+kernel time: 0.014255
+setup time: 0.076500
+kernel time: 0.014281
+setup time: 0.077622
+kernel time: 0.014297
+setup time: 0.077173
+kernel time: 0.014218
+setup time: 0.080505
+kernel time: 0.014253
+setup time: 0.078587
+kernel time: 0.014356
+setup time: 0.096454
+kernel time: 0.014241
+setup time: 0.106127
+kernel time: 0.014243
+setup time: 0.097679
+kernel time: 0.014188
+setup time: 0.106380
+kernel time: 0.014210
+setup time: 0.079184
+kernel time: 0.014175
+setup time: 0.102630
+kernel time: 0.014220
+
+ Performance counter stats for './opencl/opencl 1024 1' (20 runs):
+
+            121.95 msec task-clock                #    0.874 CPUs utilized            ( +-  1.79% )
+                68      context-switches          #  551.587 /sec                     ( +-  2.57% )
+                 0      cpu-migrations            #    0.000 /sec                   
+             8,538      page-faults               #   69.257 K/sec                    ( +-  0.01% )
+       518,526,402      cycles                    #    4.206 GHz                      ( +-  0.73% )
+       656,229,276      instructions              #    1.23  insn per cycle           ( +-  0.29% )
+       150,722,277      branches                  #    1.223 G/sec                    ( +-  0.29% )
+           927,939      branch-misses             #    0.61% of all branches          ( +-  4.44% )
+
+           0.13959 +- 0.00377 seconds time elapsed  ( +-  2.70% )
+
+###
+ARR_SIZE:2048
+###HIP
+setup time: 0.172578
+kernel time: 0.097208
+setup time: 0.137402
+kernel time: 0.097308
+setup time: 0.133474
+kernel time: 0.097098
+setup time: 0.133557
+kernel time: 0.096923
+setup time: 0.117482
+kernel time: 0.096819
+setup time: 0.142857
+kernel time: 0.096856
+setup time: 0.118793
+kernel time: 0.096966
+setup time: 0.121106
+kernel time: 0.096764
+setup time: 0.120898
+kernel time: 0.096718
+setup time: 0.121214
+kernel time: 0.096915
+setup time: 0.120052
+kernel time: 0.096839
+setup time: 0.119998
+kernel time: 0.096877
+setup time: 0.135285
+kernel time: 0.097236
+setup time: 0.115690
+kernel time: 0.096781
+setup time: 0.120397
+kernel time: 0.096784
+setup time: 0.140474
+kernel time: 0.096948
+setup time: 0.127478
+kernel time: 0.097113
+setup time: 0.138288
+kernel time: 0.096918
+setup time: 0.118679
+kernel time: 0.097286
+setup time: 0.137589
+kernel time: 0.096847
+
+ Performance counter stats for './hip/hip 2048 1' (20 runs):
+
+            239.93 msec task-clock                #    0.942 CPUs utilized            ( +-  0.76% )
+                44      context-switches          #  179.807 /sec                     ( +-  4.86% )
+                 2      cpu-migrations            #    8.173 /sec                     ( +-  6.18% )
+            14,269      page-faults               #   58.310 K/sec                    ( +-  0.01% )
+     1,090,986,214      cycles                    #    4.458 GHz                      ( +-  0.35% )
+     1,815,964,177      instructions              #    1.64  insn per cycle           ( +-  0.20% )
+       387,515,756      branches                  #    1.584 G/sec                    ( +-  0.18% )
+           999,622      branch-misses             #    0.26% of all branches          ( +-  5.40% )
+
+           0.25473 +- 0.00306 seconds time elapsed  ( +-  1.20% )
+
+###
+###OPENCL
+setup time: 0.166186
+kernel time: 0.102055
+setup time: 0.157928
+kernel time: 0.102167
+setup time: 0.165712
+kernel time: 0.101982
+setup time: 0.138117
+kernel time: 0.101928
+setup time: 0.143012
+kernel time: 0.101848
+setup time: 0.153510
+kernel time: 0.101803
+setup time: 0.137340
+kernel time: 0.101994
+setup time: 0.143651
+kernel time: 0.101705
+setup time: 0.154966
+kernel time: 0.102036
+setup time: 0.139400
+kernel time: 0.101934
+setup time: 0.156501
+kernel time: 0.101901
+setup time: 0.132758
+kernel time: 0.101877
+setup time: 0.139093
+kernel time: 0.101789
+setup time: 0.138696
+kernel time: 0.102051
+setup time: 0.133900
+kernel time: 0.101855
+setup time: 0.156552
+kernel time: 0.102144
+setup time: 0.156507
+kernel time: 0.102102
+setup time: 0.163514
+kernel time: 0.102081
+setup time: 0.136347
+kernel time: 0.101853
+setup time: 0.154532
+kernel time: 0.102275
+
+ Performance counter stats for './opencl/opencl 2048 1' (20 runs):
+
+            269.85 msec task-clock                #    0.941 CPUs utilized            ( +-  0.27% )
+                74      context-switches          #  273.945 /sec                     ( +-  0.52% )
+                 0      cpu-migrations            #    0.000 /sec                   
+            23,900      page-faults               #   88.477 K/sec                    ( +-  0.00% )
+     1,221,680,783      cycles                    #    4.523 GHz                      ( +-  0.25% )
+     1,860,470,719      instructions              #    1.52  insn per cycle           ( +-  0.19% )
+       396,447,643      branches                  #    1.468 G/sec                    ( +-  0.17% )
+         1,295,545      branch-misses             #    0.33% of all branches          ( +-  3.44% )
+
+           0.28677 +- 0.00264 seconds time elapsed  ( +-  0.92% )
+
+###
+ARR_SIZE:3072
+###HIP
+setup time: 0.232819
+kernel time: 0.331803
+setup time: 0.221883
+kernel time: 0.331706
+setup time: 0.222523
+kernel time: 0.331012
+setup time: 0.211998
+kernel time: 0.331644
+setup time: 0.218217
+kernel time: 0.331635
+setup time: 0.218452
+kernel time: 0.331265
+setup time: 0.220466
+kernel time: 0.331686
+setup time: 0.219593
+kernel time: 0.331770
+setup time: 0.218606
+kernel time: 0.331371
+setup time: 0.219750
+kernel time: 0.331623
+setup time: 0.218780
+kernel time: 0.331430
+setup time: 0.219825
+kernel time: 0.330835
+setup time: 0.229148
+kernel time: 0.331272
+setup time: 0.196658
+kernel time: 0.331445
+setup time: 0.235740
+kernel time: 0.331445
+setup time: 0.218823
+kernel time: 0.331583
+setup time: 0.216897
+kernel time: 0.331762
+setup time: 0.218364
+kernel time: 0.331620
+setup time: 0.204592
+kernel time: 0.331590
+setup time: 0.221849
+kernel time: 0.331899
+
+ Performance counter stats for './hip/hip 3072 1' (20 runs):
+
+            566.54 msec task-clock                #    0.971 CPUs utilized            ( +-  0.20% )
+                47      context-switches          #   83.111 /sec                     ( +-  0.93% )
+                 1      cpu-migrations            #    1.768 /sec                     ( +- 16.98% )
+            29,629      page-faults               #   52.393 K/sec                    ( +-  0.00% )
+     2,619,890,269      cycles                    #    4.633 GHz                      ( +-  0.18% )
+     4,607,597,836      instructions              #    1.76  insn per cycle           ( +-  0.17% )
+       943,661,870      branches                  #    1.669 G/sec                    ( +-  0.16% )
+         1,790,672      branch-misses             #    0.19% of all branches          ( +-  5.42% )
+
+           0.58332 +- 0.00191 seconds time elapsed  ( +-  0.33% )
+
+###
+###OPENCL
+setup time: 0.279879
+kernel time: 0.342539
+setup time: 0.249732
+kernel time: 0.342593
+setup time: 0.256294
+kernel time: 0.342524
+setup time: 0.249456
+kernel time: 0.342862
+setup time: 0.251297
+kernel time: 0.343193
+setup time: 0.255169
+kernel time: 0.342575
+setup time: 0.251857
+kernel time: 0.342258
+setup time: 0.249702
+kernel time: 0.342379
+setup time: 0.253504
+kernel time: 0.342598
+setup time: 0.257181
+kernel time: 0.343285
+setup time: 0.252075
+kernel time: 0.342818
+setup time: 0.250053
+kernel time: 0.342792
+setup time: 0.252901
+kernel time: 0.342635
+setup time: 0.261517
+kernel time: 0.342841
+setup time: 0.246152
+kernel time: 0.342305
+setup time: 0.262469
+kernel time: 0.342513
+setup time: 0.239590
+kernel time: 0.342626
+setup time: 0.259454
+kernel time: 0.342931
+setup time: 0.249522
+kernel time: 0.342810
+setup time: 0.286321
+kernel time: 0.342526
+
+ Performance counter stats for './opencl/opencl 3072 1' (20 runs):
+
+            638.27 msec task-clock                #    0.997 CPUs utilized            ( +-  0.32% )
+                76      context-switches          #  124.351 /sec                     ( +-  2.92% )
+                 0      cpu-migrations            #    0.000 /sec                   
+            49,500      page-faults               #   80.992 K/sec                    ( +-  0.00% )
+     2,836,693,883      cycles                    #    4.641 GHz                      ( +-  0.13% )
+     4,597,010,093      instructions              #    1.64  insn per cycle           ( +-  0.18% )
+       939,109,583      branches                  #    1.537 G/sec                    ( +-  0.16% )
+         2,137,911      branch-misses             #    0.23% of all branches          ( +-  2.75% )
+
+           0.64039 +- 0.00249 seconds time elapsed  ( +-  0.39% )
+
+###
+ARR_SIZE:4096
+###HIP
+setup time: 0.344429
+kernel time: 0.846720
+setup time: 0.326433
+kernel time: 0.850268
+setup time: 0.326065
+kernel time: 0.843056
+setup time: 0.325424
+kernel time: 0.835482
+setup time: 0.348533
+kernel time: 0.837531
+setup time: 0.335839
+kernel time: 0.839578
+setup time: 0.346966
+kernel time: 0.853070
+setup time: 0.332265
+kernel time: 0.848507
+setup time: 0.349328
+kernel time: 0.838189
+setup time: 0.332185
+kernel time: 0.838411
+setup time: 0.328560
+kernel time: 0.840599
+setup time: 0.327976
+kernel time: 0.837793
+setup time: 0.330482
+kernel time: 0.836303
+setup time: 0.329195
+kernel time: 0.842731
+setup time: 0.329309
+kernel time: 0.841015
+setup time: 0.331981
+kernel time: 0.839544
+setup time: 0.325797
+kernel time: 0.840287
+setup time: 0.328571
+kernel time: 0.854005
+setup time: 0.328945
+kernel time: 0.847898
+setup time: 0.336462
+kernel time: 0.838263
+
+ Performance counter stats for './hip/hip 4096 1' (20 runs):
+
+          1,192.88 msec task-clock                #    0.982 CPUs utilized            ( +-  0.18% )
+                55      context-switches          #   46.018 /sec                     ( +-  3.16% )
+                 2      cpu-migrations            #    1.673 /sec                     ( +-  9.23% )
+            51,134      page-faults               #   42.783 K/sec                    ( +-  0.00% )
+     5,530,250,570      cycles                    #    4.627 GHz                      ( +-  0.16% )
+    10,069,089,463      instructions              #    1.82  insn per cycle           ( +-  0.27% )
+     2,011,302,003      branches                  #    1.683 G/sec                    ( +-  0.25% )
+         2,235,499      branch-misses             #    0.11% of all branches          ( +-  5.29% )
+
+           1.21489 +- 0.00225 seconds time elapsed  ( +-  0.19% )
+
+###
+###OPENCL
+setup time: 0.400792
+kernel time: 0.857287
+setup time: 0.388670
+kernel time: 0.859892
+setup time: 0.398759
+kernel time: 0.863968
+setup time: 0.387698
+kernel time: 0.860920
+setup time: 0.387935
+kernel time: 0.859292
+setup time: 0.384659
+kernel time: 0.861209
+setup time: 0.383801
+kernel time: 0.863121
+setup time: 0.386885
+kernel time: 0.858927
+setup time: 0.381782
+kernel time: 0.872708
+setup time: 0.383225
+kernel time: 0.859614
+setup time: 0.383469
+kernel time: 0.859046
+setup time: 0.388287
+kernel time: 0.856905
+setup time: 0.416996
+kernel time: 0.865596
+setup time: 0.388647
+kernel time: 0.863690
+setup time: 0.381801
+kernel time: 0.859463
+setup time: 0.390496
+kernel time: 0.857082
+setup time: 0.387033
+kernel time: 0.855241
+setup time: 0.383012
+kernel time: 0.858226
+setup time: 0.389493
+kernel time: 0.862553
+setup time: 0.385065
+kernel time: 0.865579
+
+ Performance counter stats for './opencl/opencl 4096 1' (20 runs):
+
+          1,270.72 msec task-clock                #    0.979 CPUs utilized            ( +-  0.17% )
+                82      context-switches          #   64.646 /sec                     ( +-  2.62% )
+                 1      cpu-migrations            #    0.788 /sec                     ( +- 11.24% )
+            85,336      page-faults               #   67.275 K/sec                    ( +-  0.00% )
+     5,895,724,829      cycles                    #    4.648 GHz                      ( +-  0.11% )
+    10,093,640,500      instructions              #    1.72  insn per cycle           ( +-  0.23% )
+     2,004,449,488      branches                  #    1.580 G/sec                    ( +-  0.21% )
+         2,236,293      branch-misses             #    0.11% of all branches          ( +-  3.78% )
+
+           1.29766 +- 0.00224 seconds time elapsed  ( +-  0.17% )
+
+###
+ARR_SIZE:5120
+###HIP
+setup time: 0.492647
+kernel time: 1.880802
+setup time: 0.479452
+kernel time: 1.846375
+setup time: 0.473979
+kernel time: 1.953272
+setup time: 0.471543
+kernel time: 1.949074
+setup time: 0.500844
+kernel time: 1.874861
+setup time: 0.473735
+kernel time: 1.944347
+setup time: 0.473922
+kernel time: 1.869865
+setup time: 0.495754
+kernel time: 1.937286
+setup time: 0.469692
+kernel time: 1.853048
+setup time: 0.492626
+kernel time: 1.875262
+setup time: 0.474676
+kernel time: 1.965233
+setup time: 0.475364
+kernel time: 1.827145
+setup time: 0.485445
+kernel time: 1.859338
+setup time: 0.471281
+kernel time: 1.921609
+setup time: 0.475370
+kernel time: 1.848489
+setup time: 0.474775
+kernel time: 1.888579
+setup time: 0.471615
+kernel time: 1.855499
+setup time: 0.476717
+kernel time: 1.949956
+setup time: 0.470860
+kernel time: 1.797270
+setup time: 0.476046
+kernel time: 1.937004
+
+ Performance counter stats for './hip/hip 5120 1' (20 runs):
+
+          2,441.39 msec task-clock                #    1.010 CPUs utilized            ( +-  0.46% )
+                68      context-switches          #   28.350 /sec                     ( +-  3.09% )
+                 1      cpu-migrations            #    0.417 /sec                     ( +- 19.83% )
+            78,791      page-faults               #   32.849 K/sec                    ( +-  0.00% )
+    11,373,087,120      cycles                    #    4.742 GHz                      ( +-  0.46% )
+    20,520,144,794      instructions              #    1.84  insn per cycle           ( +-  0.50% )
+     4,022,113,739      branches                  #    1.677 G/sec                    ( +-  0.48% )
+         2,804,015      branch-misses             #    0.07% of all branches          ( +-  6.35% )
+
+            2.4179 +- 0.0111 seconds time elapsed  ( +-  0.46% )
+
+###
+###OPENCL
+setup time: 0.561855
+kernel time: 1.905620
+setup time: 0.559109
+kernel time: 1.839680
+setup time: 0.554862
+kernel time: 1.890255
+setup time: 0.555758
+kernel time: 1.921917
+setup time: 0.584529
+kernel time: 1.987744
+setup time: 0.553839
+kernel time: 1.946491
+setup time: 0.554250
+kernel time: 1.843796
+setup time: 0.548820
+kernel time: 1.935966
+setup time: 0.550916
+kernel time: 1.992425
+setup time: 0.551207
+kernel time: 1.891729
+setup time: 0.555290
+kernel time: 1.928313
+setup time: 0.550470
+kernel time: 1.967034
+setup time: 0.571455
+kernel time: 1.914766
+setup time: 0.573577
+kernel time: 1.868662
+setup time: 0.550100
+kernel time: 1.907897
+setup time: 0.553993
+kernel time: 1.829382
+setup time: 0.553708
+kernel time: 1.895797
+setup time: 0.559319
+kernel time: 1.953237
+setup time: 0.551903
+kernel time: 1.938917
+setup time: 0.554749
+kernel time: 1.840216
+
+ Performance counter stats for './opencl/opencl 5120 1' (20 runs):
+
+          2,422.37 msec task-clock                #    0.959 CPUs utilized            ( +-  0.47% )
+                92      context-switches          #   36.864 /sec                     ( +-  3.43% )
+                 1      cpu-migrations            #    0.401 /sec                     ( +- 15.22% )
+           131,414      page-faults               #   52.657 K/sec                    ( +-  0.00% )
+    11,276,029,225      cycles                    #    4.518 GHz                      ( +-  0.47% )
+    19,006,054,273      instructions              #    1.64  insn per cycle           ( +-  0.55% )
+     3,713,208,440      branches                  #    1.488 G/sec                    ( +-  0.52% )
+         2,835,120      branch-misses             #    0.07% of all branches          ( +-  5.87% )
+
+            2.5257 +- 0.0112 seconds time elapsed  ( +-  0.44% )
+
+###
+ARR_SIZE:6144
+###HIP
+setup time: 0.672259
+kernel time: 3.693491
+setup time: 0.653172
+kernel time: 3.693559
+setup time: 0.656656
+kernel time: 3.694789
+setup time: 0.654442
+kernel time: 3.695461
+setup time: 0.657568
+kernel time: 3.693435
+setup time: 0.656258
+kernel time: 3.687973
+setup time: 0.669800
+kernel time: 3.693491
+setup time: 0.678455
+kernel time: 3.689961
+setup time: 0.652578
+kernel time: 3.695781
+setup time: 0.690441
+kernel time: 3.691169
+setup time: 0.655146
+kernel time: 3.693885
+setup time: 0.684366
+kernel time: 3.693411
+setup time: 0.651636
+kernel time: 3.693242
+setup time: 0.650574
+kernel time: 3.692738
+setup time: 0.664559
+kernel time: 3.691849
+setup time: 0.653041
+kernel time: 3.695180
+setup time: 0.680638
+kernel time: 3.692651
+setup time: 0.649911
+kernel time: 3.687700
+setup time: 0.657432
+kernel time: 3.695181
+setup time: 0.657765
+kernel time: 3.689848
+
+ Performance counter stats for './hip/hip 6144 1' (20 runs):
+
+          4,388.79 msec task-clock                #    0.994 CPUs utilized            ( +-  0.06% )
+                97      context-switches          #   22.075 /sec                     ( +-  4.82% )
+                 1      cpu-migrations            #    0.228 /sec                     ( +- 19.33% )
+           112,580      page-faults               #   25.620 K/sec                    ( +-  0.00% )
+    20,459,994,329      cycles                    #    4.656 GHz                      ( +-  0.04% )
+    37,578,102,077      instructions              #    1.84  insn per cycle           ( +-  0.23% )
+     7,277,606,953      branches                  #    1.656 G/sec                    ( +-  0.22% )
+         4,667,461      branch-misses             #    0.06% of all branches          ( +-  4.24% )
+
+           4.41354 +- 0.00278 seconds time elapsed  ( +-  0.06% )
+
+###
+###OPENCL
+setup time: 0.763681
+kernel time: 3.740838
+setup time: 0.762133
+kernel time: 3.744712
+setup time: 0.757304
+kernel time: 3.738923
+setup time: 0.762596
+kernel time: 3.742253
+setup time: 0.761816
+kernel time: 3.743039
+setup time: 0.753680
+kernel time: 3.739906
+setup time: 0.761568
+kernel time: 3.738597
+setup time: 0.769626
+kernel time: 3.742099
+setup time: 0.756809
+kernel time: 3.739670
+setup time: 0.754563
+kernel time: 3.738822
+setup time: 0.793206
+kernel time: 3.742836
+setup time: 0.760770
+kernel time: 3.742269
+setup time: 0.766281
+kernel time: 3.742678
+setup time: 0.781056
+kernel time: 3.743432
+setup time: 0.763049
+kernel time: 3.739735
+setup time: 0.774854
+kernel time: 3.742347
+setup time: 0.777838
+kernel time: 3.742463
+setup time: 0.775306
+kernel time: 3.738963
+setup time: 0.761187
+kernel time: 3.739229
+setup time: 0.770932
+kernel time: 3.745066
+
+ Performance counter stats for './opencl/opencl 6144 1' (20 runs):
+
+          4,554.72 msec task-clock                #    0.995 CPUs utilized            ( +-  0.06% )
+               136      context-switches          #   29.895 /sec                     ( +-  1.18% )
+                 1      cpu-migrations            #    0.220 /sec                     ( +- 31.01% )
+           187,735      page-faults               #   41.268 K/sec                    ( +-  0.00% )
+    21,213,379,902      cycles                    #    4.663 GHz                      ( +-  0.04% )
+    36,221,161,435      instructions              #    1.71  insn per cycle           ( +-  0.30% )
+     6,963,283,654      branches                  #    1.531 G/sec                    ( +-  0.29% )
+         4,756,098      branch-misses             #    0.07% of all branches          ( +-  3.06% )
+
+           4.57703 +- 0.00266 seconds time elapsed  ( +-  0.06% )
+
+###
+ARR_SIZE:7168
+###HIP
+setup time: 0.884596
+kernel time: 5.930316
+setup time: 0.876220
+kernel time: 5.929797
+setup time: 0.879618
+kernel time: 5.926495
+setup time: 0.868090
+kernel time: 5.931241
+setup time: 0.856175
+kernel time: 5.930110
+setup time: 0.864689
+kernel time: 5.926316
+setup time: 0.882992
+kernel time: 5.931381
+setup time: 0.866108
+kernel time: 5.934031
+setup time: 0.880025
+kernel time: 5.934309
+setup time: 0.871701
+kernel time: 5.937050
+setup time: 0.880682
+kernel time: 5.929546
+setup time: 0.861528
+kernel time: 5.935751
+setup time: 0.878071
+kernel time: 5.934235
+setup time: 0.908954
+kernel time: 5.932119
+setup time: 0.866644
+kernel time: 5.932551
+setup time: 0.858272
+kernel time: 5.927482
+setup time: 0.862103
+kernel time: 5.930367
+setup time: 0.880885
+kernel time: 5.926638
+setup time: 0.868722
+kernel time: 5.933970
+setup time: 0.871788
+kernel time: 5.933502
+
+ Performance counter stats for './hip/hip 7168 1' (20 runs):
+
+          6,858.34 msec task-clock                #    0.997 CPUs utilized            ( +-  0.04% )
+               143      context-switches          #   20.850 /sec                     ( +-  1.23% )
+                 2      cpu-migrations            #    0.292 /sec                     ( +- 12.50% )
+           152,518      page-faults               #   22.238 K/sec                    ( +-  0.00% )
+    31,973,548,095      cycles                    #    4.662 GHz                      ( +-  0.04% )
+    58,910,134,883      instructions              #    1.84  insn per cycle           ( +-  0.34% )
+    11,344,461,909      branches                  #    1.654 G/sec                    ( +-  0.33% )
+         5,818,471      branch-misses             #    0.05% of all branches          ( +-  3.96% )
+
+           6.87743 +- 0.00278 seconds time elapsed  ( +-  0.04% )
+
+###
+###OPENCL
+setup time: 1.009337
+kernel time: 5.997483
+setup time: 1.000286
+kernel time: 6.003777
+setup time: 1.043429
+kernel time: 5.995951
+setup time: 1.015644
+kernel time: 5.992347
+setup time: 1.012912
+kernel time: 6.000123
+setup time: 0.999835
+kernel time: 6.002687
+setup time: 0.995903
+kernel time: 5.999545
+setup time: 1.000976
+kernel time: 5.997802
+setup time: 1.009258
+kernel time: 6.002762
+setup time: 1.028428
+kernel time: 5.997525
+setup time: 0.999557
+kernel time: 5.999888
+setup time: 1.006724
+kernel time: 6.000853
+setup time: 1.004638
+kernel time: 5.997211
+setup time: 1.015499
+kernel time: 5.992636
+setup time: 1.008544
+kernel time: 5.995276
+setup time: 1.017143
+kernel time: 6.001972
+setup time: 1.001944
+kernel time: 6.001863
+setup time: 1.005636
+kernel time: 5.989235
+setup time: 1.003399
+kernel time: 6.000932
+setup time: 0.996508
+kernel time: 5.994636
+
+ Performance counter stats for './opencl/opencl 7168 1' (20 runs):
+
+          7,049.22 msec task-clock                #    0.994 CPUs utilized            ( +-  0.03% )
+               164      context-switches          #   23.224 /sec                     ( +-  2.79% )
+                 0      cpu-migrations            #    0.000 /sec                   
+           254,304      page-faults               #   36.012 K/sec                    ( +-  0.00% )
+    32,871,918,281      cycles                    #    4.655 GHz                      ( +-  0.03% )
+    55,652,484,003      instructions              #    1.69  insn per cycle           ( +-  0.48% )
+    10,636,381,455      branches                  #    1.506 G/sec                    ( +-  0.46% )
+         4,938,619      branch-misses             #    0.05% of all branches          ( +-  4.15% )
+
+           7.08999 +- 0.00289 seconds time elapsed  ( +-  0.04% )
+
+###
+ARR_SIZE:8192
+###HIP
+setup time: 1.109503
+kernel time: 9.061569
+setup time: 1.096206
+kernel time: 9.059509
+setup time: 1.102848
+kernel time: 9.049979
+setup time: 1.112296
+kernel time: 9.052307
+setup time: 1.105402
+kernel time: 9.067909
+setup time: 1.100963
+kernel time: 9.051533
+setup time: 1.106548
+kernel time: 9.050887
+setup time: 1.126730
+kernel time: 9.058674
+setup time: 1.101253
+kernel time: 9.057481
+setup time: 1.115396
+kernel time: 9.051952
+setup time: 1.098456
+kernel time: 9.058620
+setup time: 1.095704
+kernel time: 9.057151
+setup time: 1.099001
+kernel time: 9.054230
+setup time: 1.096470
+kernel time: 9.061488
+setup time: 1.134176
+kernel time: 9.057256
+setup time: 1.097526
+kernel time: 9.056695
+setup time: 1.101721
+kernel time: 9.060097
+setup time: 1.110066
+kernel time: 9.059353
+setup time: 1.095357
+kernel time: 9.059076
+setup time: 1.106831
+kernel time: 9.044290
+
+ Performance counter stats for './hip/hip 8192 1' (20 runs):
+
+         10,220.05 msec task-clock                #    0.997 CPUs utilized            ( +-  0.02% )
+               172      context-switches          #   16.810 /sec                     ( +-  2.87% )
+                 3      cpu-migrations            #    0.293 /sec                     ( +-  7.87% )
+           198,600      page-faults               #   19.410 K/sec                    ( +-  0.00% )
+    47,658,956,562      cycles                    #    4.658 GHz                      ( +-  0.02% )
+    87,036,541,969      instructions              #    1.82  insn per cycle           ( +-  0.23% )
+    16,692,047,190      branches                  #    1.631 G/sec                    ( +-  0.23% )
+         8,338,997      branch-misses             #    0.05% of all branches          ( +-  3.04% )
+
+          10.25106 +- 0.00246 seconds time elapsed  ( +-  0.02% )
+
+###
+###OPENCL
+setup time: 1.309993
+kernel time: 9.151821
+setup time: 1.310398
+kernel time: 9.135736
+setup time: 1.299431
+kernel time: 9.153923
+setup time: 1.319361
+kernel time: 9.139949
+setup time: 1.291824
+kernel time: 9.139787
+setup time: 1.290795
+kernel time: 9.142846
+setup time: 1.287490
+kernel time: 9.144399
+setup time: 1.327398
+kernel time: 9.147184
+setup time: 1.286087
+kernel time: 9.139369
+setup time: 1.283058
+kernel time: 9.144289
+setup time: 1.284990
+kernel time: 9.144721
+setup time: 1.315399
+kernel time: 9.149164
+setup time: 1.296253
+kernel time: 9.140942
+setup time: 1.281920
+kernel time: 9.141488
+setup time: 1.272393
+kernel time: 9.147801
+setup time: 1.303730
+kernel time: 9.149302
+setup time: 1.279559
+kernel time: 9.139359
+setup time: 1.282412
+kernel time: 9.152759
+setup time: 1.282861
+kernel time: 9.138860
+setup time: 1.296286
+kernel time: 9.154480
+
+ Performance counter stats for './opencl/opencl 8192 1' (20 runs):
+
+         10,518.70 msec task-clock                #    0.998 CPUs utilized            ( +-  0.03% )
+               220      context-switches          #   20.933 /sec                     ( +-  2.10% )
+                 0      cpu-migrations            #    0.000 /sec                   
+           331,106      page-faults               #   31.505 K/sec                    ( +-  0.00% )
+    49,046,568,487      cycles                    #    4.667 GHz                      ( +-  0.03% )
+    83,417,648,964      instructions              #    1.70  insn per cycle           ( +-  0.30% )
+    15,857,251,918      branches                  #    1.509 G/sec                    ( +-  0.29% )
+         6,403,587      branch-misses             #    0.04% of all branches          ( +-  2.18% )
+
+          10.53791 +- 0.00382 seconds time elapsed  ( +-  0.04% )
+
+###
+ARR_SIZE:9216
+###HIP
+setup time: 1.398399
+kernel time: 13.368405
+setup time: 1.386702
+kernel time: 13.373581
+setup time: 1.383883
+kernel time: 13.368805
+setup time: 1.375722
+kernel time: 13.382875
+setup time: 1.373053
+kernel time: 13.377495
+setup time: 1.390896
+kernel time: 13.364958
+setup time: 1.389581
+kernel time: 13.371699
+setup time: 1.383498
+kernel time: 13.380156
+setup time: 1.378839
+kernel time: 13.370430
+setup time: 1.384252
+kernel time: 13.366937
+setup time: 1.380455
+kernel time: 13.365562
+setup time: 1.394554
+kernel time: 13.362674
+setup time: 1.374327
+kernel time: 13.363271
+setup time: 1.375974
+kernel time: 13.367330
+setup time: 1.381417
+kernel time: 13.360509
+setup time: 1.374470
+kernel time: 13.371617
+setup time: 1.376573
+kernel time: 13.361480
+setup time: 1.372367
+kernel time: 13.361960
+setup time: 1.397651
+kernel time: 13.365987
+setup time: 1.372885
+kernel time: 13.374936
+
+ Performance counter stats for './hip/hip 9216 1' (20 runs):
+
+         14,837.38 msec task-clock                #    0.999 CPUs utilized            ( +-  0.01% )
+               249      context-switches          #   16.779 /sec                     ( +-  1.73% )
+                 3      cpu-migrations            #    0.202 /sec                     ( +- 14.28% )
+           250,827      page-faults               #   16.902 K/sec                    ( +-  0.00% )
+    69,207,263,426      cycles                    #    4.664 GHz                      ( +-  0.02% )
+   125,775,879,434      instructions              #    1.82  insn per cycle           ( +-  0.39% )
+    24,030,591,704      branches                  #    1.619 G/sec                    ( +-  0.38% )
+         8,417,731      branch-misses             #    0.03% of all branches          ( +-  3.44% )
+
+          14.85865 +- 0.00210 seconds time elapsed  ( +-  0.01% )
+
+###
+###OPENCL
+setup time: 1.632054
+kernel time: 13.476024
+setup time: 1.607214
+kernel time: 13.480160
+setup time: 1.605477
+kernel time: 13.471105
+setup time: 1.605880
+kernel time: 13.478673
+setup time: 1.607557
+kernel time: 13.473517
+setup time: 1.609354
+kernel time: 13.475904
+setup time: 1.600555
+kernel time: 13.475326
+setup time: 1.617650
+kernel time: 13.479727
+setup time: 1.609693
+kernel time: 13.483664
+setup time: 1.622264
+kernel time: 13.469336
+setup time: 1.604812
+kernel time: 13.491659
+setup time: 1.609916
+kernel time: 13.483184
+setup time: 1.619540
+kernel time: 13.465108
+setup time: 1.608498
+kernel time: 13.463506
+setup time: 1.616649
+kernel time: 13.470219
+setup time: 1.636124
+kernel time: 13.492449
+setup time: 1.606142
+kernel time: 13.480417
+setup time: 1.635020
+kernel time: 13.478254
+setup time: 1.604664
+kernel time: 13.492342
+setup time: 1.604310
+kernel time: 13.477412
+
+ Performance counter stats for './opencl/opencl 9216 1' (20 runs):
+
+         15,168.88 msec task-clock                #    0.998 CPUs utilized            ( +-  0.02% )
+               294      context-switches          #   19.369 /sec                     ( +-  0.88% )
+                 0      cpu-migrations            #    0.000 /sec                   
+           418,144      page-faults               #   27.547 K/sec                    ( +-  0.00% )
+    70,696,149,758      cycles                    #    4.657 GHz                      ( +-  0.02% )
+   122,818,747,276      instructions              #    1.74  insn per cycle           ( +-  0.34% )
+    23,229,592,135      branches                  #    1.530 G/sec                    ( +-  0.33% )
+         7,562,362      branch-misses             #    0.03% of all branches          ( +- 45.51% )
+
+          15.20486 +- 0.00313 seconds time elapsed  ( +-  0.02% )
+
+###
+ARR_SIZE:10240
+###HIP
+setup time: 1.696682
+kernel time: 18.470936
+setup time: 1.682622
+kernel time: 18.489078
+setup time: 1.694736
+kernel time: 18.488942
+setup time: 1.683630
+kernel time: 18.477822
+setup time: 1.679289
+kernel time: 18.484178
+setup time: 1.679778
+kernel time: 18.493495
+setup time: 1.677599
+kernel time: 18.494812
+setup time: 1.674305
+kernel time: 18.481779
+setup time: 1.735801
+kernel time: 18.498880
+setup time: 1.674759
+kernel time: 18.487101
+setup time: 1.690285
+kernel time: 18.496481
+setup time: 1.707814
+kernel time: 18.477793
+setup time: 1.681095
+kernel time: 18.477425
+setup time: 1.676386
+kernel time: 18.479740
+setup time: 1.680996
+kernel time: 18.485515
+setup time: 1.691706
+kernel time: 18.472485
+setup time: 1.679942
+kernel time: 18.476927
+setup time: 1.704667
+kernel time: 18.498065
+setup time: 1.683578
+kernel time: 18.487279
+setup time: 1.684120
+kernel time: 18.480792
+
+ Performance counter stats for './hip/hip 10240 1' (20 runs):
+
+         20,271.73 msec task-clock                #    0.999 CPUs utilized            ( +-  0.02% )
+               328      context-switches          #   16.173 /sec                     ( +-  4.06% )
+                 5      cpu-migrations            #    0.247 /sec                     ( +-  9.41% )
+           309,199      page-faults               #   15.246 K/sec                    ( +-  0.00% )
+    94,559,543,629      cycles                    #    4.663 GHz                      ( +-  0.02% )
+   173,449,184,173      instructions              #    1.83  insn per cycle           ( +-  0.21% )
+    33,048,382,314      branches                  #    1.630 G/sec                    ( +-  0.21% )
+        11,526,884      branch-misses             #    0.03% of all branches          ( +-  2.47% )
+
+          20.29913 +- 0.00422 seconds time elapsed  ( +-  0.02% )
+
+###
+###OPENCL
+setup time: 1.957446
+kernel time: 18.610069
+setup time: 1.955120
+kernel time: 18.604652
+setup time: 1.957069
+kernel time: 18.608080
+setup time: 1.955087
+kernel time: 18.619382
+setup time: 1.949824
+kernel time: 18.609837
+setup time: 1.961515
+kernel time: 18.607935
+setup time: 1.953743
+kernel time: 18.613827
+setup time: 1.955404
+kernel time: 18.604944
+setup time: 2.007848
+kernel time: 18.626339
+setup time: 1.961416
+kernel time: 18.602607
+setup time: 1.951833
+kernel time: 18.619712
+setup time: 1.964582
+kernel time: 18.627937
+setup time: 1.963196
+kernel time: 18.619220
+setup time: 1.957862
+kernel time: 18.616670
+setup time: 1.949843
+kernel time: 18.626723
+setup time: 1.963138
+kernel time: 18.609239
+setup time: 1.989408
+kernel time: 18.618800
+setup time: 1.956188
+kernel time: 18.614198
+setup time: 1.950452
+kernel time: 18.605997
+setup time: 1.962479
+kernel time: 18.622271
+
+ Performance counter stats for './opencl/opencl 10240 1' (20 runs):
+
+         20,688.53 msec task-clock                #    0.999 CPUs utilized            ( +-  0.02% )
+               414      context-switches          #   20.019 /sec                     ( +-  3.25% )
+                 5      cpu-migrations            #    0.242 /sec                     ( +-  9.36% )
+           515,424      page-faults               #   24.923 K/sec                    ( +-  0.00% )
+    96,502,462,010      cycles                    #    4.666 GHz                      ( +-  0.02% )
+   166,740,336,718      instructions              #    1.73  insn per cycle           ( +-  0.26% )
+    31,450,094,142      branches                  #    1.521 G/sec                    ( +-  0.25% )
+        10,103,813      branch-misses             #    0.03% of all branches          ( +-  1.80% )
+
+          20.70615 +- 0.00411 seconds time elapsed  ( +-  0.02% )
+
+###
+ARR_SIZE:11264
+###HIP
+setup time: 2.030150
+kernel time: 25.242028
+setup time: 2.041029
+kernel time: 25.227823
+setup time: 2.042034
+kernel time: 25.243512
+setup time: 2.032031
+kernel time: 25.212961
+setup time: 2.021502
+kernel time: 25.213898
+setup time: 2.021677
+kernel time: 25.229614
+setup time: 2.023438
+kernel time: 25.229356
+setup time: 2.016640
+kernel time: 25.225471
+setup time: 2.018368
+kernel time: 25.241308
+setup time: 2.033560
+kernel time: 25.243594
+setup time: 2.026840
+kernel time: 25.231179
+setup time: 2.020411
+kernel time: 25.211256
+setup time: 2.021523
+kernel time: 25.232887
+setup time: 2.018540
+kernel time: 25.241302
+setup time: 2.020285
+kernel time: 25.239442
+setup time: 2.021279
+kernel time: 25.240618
+setup time: 2.020225
+kernel time: 25.223953
+setup time: 2.061320
+kernel time: 25.256975
+setup time: 2.018802
+kernel time: 25.212210
+setup time: 2.013220
+kernel time: 25.237906
+
+ Performance counter stats for './hip/hip 11264 1' (20 runs):
+
+         27,380.11 msec task-clock                #    0.999 CPUs utilized            ( +-  0.02% )
+               446      context-switches          #   16.285 /sec                     ( +-  2.75% )
+                 3      cpu-migrations            #    0.110 /sec                     ( +- 24.09% )
+           373,701      page-faults               #   13.646 K/sec                    ( +-  0.00% )
+   127,730,943,383      cycles                    #    4.664 GHz                      ( +-  0.02% )
+   231,724,544,985      instructions              #    1.81  insn per cycle           ( +-  0.35% )
+    44,054,850,952      branches                  #    1.609 G/sec                    ( +-  0.34% )
+        12,633,898      branch-misses             #    0.03% of all branches          ( +-  4.28% )
+
+          27.40447 +- 0.00473 seconds time elapsed  ( +-  0.02% )
+
+###
+###OPENCL
+setup time: 2.370073
+kernel time: 25.407637
+setup time: 2.343778
+kernel time: 25.389966
+setup time: 2.361953
+kernel time: 25.374476
+setup time: 2.339917
+kernel time: 25.373594
+setup time: 2.369113
+kernel time: 25.373532
+setup time: 2.387881
+kernel time: 25.388368
+setup time: 2.353319
+kernel time: 25.395543
+setup time: 2.362862
+kernel time: 25.376312
+setup time: 2.354681
+kernel time: 25.391106
+setup time: 2.351035
+kernel time: 25.354777
+setup time: 2.342668
+kernel time: 25.375552
+setup time: 2.346338
+kernel time: 25.377847
+setup time: 2.348666
+kernel time: 25.381863
+setup time: 2.377203
+kernel time: 25.377804
+setup time: 2.370084
+kernel time: 25.376908
+setup time: 2.356494
+kernel time: 25.375121
+setup time: 2.338654
+kernel time: 25.406136
+setup time: 2.346813
+kernel time: 25.395853
+setup time: 2.348829
+kernel time: 25.383798
+setup time: 2.377669
+kernel time: 25.392902
+
+ Performance counter stats for './opencl/opencl 11264 1' (20 runs):
+
+         27,897.34 msec task-clock                #    1.000 CPUs utilized            ( +-  0.02% )
+               508      context-switches          #   18.230 /sec                     ( +-  3.01% )
+                 2      cpu-migrations            #    0.072 /sec                     ( +- 17.20% )
+           622,949      page-faults               #   22.355 K/sec                    ( +-  0.00% )
+   130,120,103,781      cycles                    #    4.669 GHz                      ( +-  0.02% )
+   225,833,906,975      instructions              #    1.74  insn per cycle           ( +-  0.31% )
+    42,472,543,158      branches                  #    1.524 G/sec                    ( +-  0.30% )
+        13,222,571      branch-misses             #    0.03% of all branches          ( +-  1.79% )
+
+          27.89133 +- 0.00432 seconds time elapsed  ( +-  0.02% )
+
+###
+ARR_SIZE:12288
+###HIP
+setup time: 2.393042
+kernel time: 35.550500
+setup time: 2.391667
+kernel time: 35.525350
+setup time: 2.387511
+kernel time: 35.516969
+setup time: 2.391978
+kernel time: 35.498823
+setup time: 2.389518
+kernel time: 35.511873
+setup time: 2.383346
+kernel time: 35.540491
+setup time: 2.393236
+kernel time: 35.501218
+setup time: 2.408807
+kernel time: 35.553880
+setup time: 2.382713
+kernel time: 35.483207
+setup time: 2.398786
+kernel time: 35.506546
+setup time: 2.388381
+kernel time: 35.537502
+setup time: 2.386683
+kernel time: 35.510602
+setup time: 2.411873
+kernel time: 35.521182
+setup time: 2.398440
+kernel time: 35.527969
+setup time: 2.386849
+kernel time: 35.509534
+setup time: 2.391407
+kernel time: 35.491634
+setup time: 2.383937
+kernel time: 35.526434
+setup time: 2.383821
+kernel time: 35.535513
+setup time: 2.391304
+kernel time: 35.490428
+setup time: 2.383606
+kernel time: 35.522938
+
+ Performance counter stats for './hip/hip 12288 1' (20 runs):
+
+         38,059.48 msec task-clock                #    0.999 CPUs utilized            ( +-  0.01% )
+               630      context-switches          #   16.552 /sec                     ( +-  1.87% )
+                 3      cpu-migrations            #    0.079 /sec                     ( +- 11.82% )
+           444,362      page-faults               #   11.675 K/sec                    ( +-  0.00% )
+   177,489,717,735      cycles                    #    4.663 GHz                      ( +-  0.02% )
+   320,788,779,545      instructions              #    1.81  insn per cycle           ( +-  0.41% )
+    60,813,128,470      branches                  #    1.598 G/sec                    ( +-  0.40% )
+        17,446,534      branch-misses             #    0.03% of all branches          ( +-  1.66% )
+
+          38.07853 +- 0.00510 seconds time elapsed  ( +-  0.01% )
+
+###
+###OPENCL
+setup time: 2.811359
+kernel time: 35.698744
+setup time: 2.770621
+kernel time: 35.721965
+setup time: 2.774915
+kernel time: 35.705124
+setup time: 2.773998
+kernel time: 35.699557
+setup time: 2.776887
+kernel time: 35.726106
+setup time: 2.776617
+kernel time: 35.698644
+setup time: 2.774045
+kernel time: 35.671036
+setup time: 2.805999
+kernel time: 35.702660
+setup time: 2.776705
+kernel time: 35.715265
+setup time: 2.814344
+kernel time: 35.673214
+setup time: 2.797083
+kernel time: 35.717432
+setup time: 2.781785
+kernel time: 35.710376
+setup time: 2.796249
+kernel time: 35.691387
+setup time: 2.827661
+kernel time: 35.706826
+setup time: 2.778543
+kernel time: 35.711109
+setup time: 2.785572
+kernel time: 35.727785
+setup time: 2.762593
+kernel time: 35.679842
+setup time: 2.770682
+kernel time: 35.704236
+setup time: 2.801400
+kernel time: 35.714955
+setup time: 2.810930
+kernel time: 35.704933
+
+ Performance counter stats for './opencl/opencl 12288 1' (20 runs):
+
+         38,663.26 msec task-clock                #    1.000 CPUs utilized            ( +-  0.01% )
+               663      context-switches          #   17.158 /sec                     ( +-  2.30% )
+                 3      cpu-migrations            #    0.078 /sec                     ( +- 19.12% )
+           740,702      page-faults               #   19.169 K/sec                    ( +-  0.00% )
+   180,273,568,956      cycles                    #    4.665 GHz                      ( +-  0.01% )
+   316,223,484,857      instructions              #    1.75  insn per cycle           ( +-  0.47% )
+    59,258,985,336      branches                  #    1.534 G/sec                    ( +-  0.46% )
+        14,910,317      branch-misses             #    0.03% of all branches          ( +-  1.56% )
+
+          38.66450 +- 0.00522 seconds time elapsed  ( +-  0.01% )
+
+###
+ARR_SIZE:13312
+###HIP
+setup time: 2.792001
+kernel time: 42.967810
+setup time: 2.809983
+kernel time: 43.023301
+setup time: 2.783719
+kernel time: 42.996938
+setup time: 2.782253
+kernel time: 42.998197
+setup time: 2.785880
+kernel time: 42.975869
+setup time: 2.811941
+kernel time: 42.989009
+setup time: 2.782442
+kernel time: 42.991589
+setup time: 2.787044
+kernel time: 42.981669
+setup time: 2.785116
+kernel time: 42.984382
+setup time: 2.787792
+kernel time: 42.979712
+setup time: 2.811897
+kernel time: 43.002376
+setup time: 2.779695
+kernel time: 43.000482
+setup time: 2.782718
+kernel time: 42.989578
+setup time: 2.793166
+kernel time: 42.994255
+setup time: 2.781743
+kernel time: 42.989831
+setup time: 2.809633
+kernel time: 43.011616
+setup time: 2.786676
+kernel time: 42.990336
+setup time: 2.799466
+kernel time: 43.000530
+setup time: 2.789893
+kernel time: 43.011782
+setup time: 2.789206
+kernel time: 42.998012
+
+ Performance counter stats for './hip/hip 13312 1' (20 runs):
+
+         45,964.74 msec task-clock                #    1.000 CPUs utilized            ( +-  0.01% )
+               779      context-switches          #   16.949 /sec                     ( +-  2.23% )
+                 5      cpu-migrations            #    0.109 /sec                     ( +-  7.46% )
+           521,165      page-faults               #   11.339 K/sec                    ( +-  0.00% )
+   214,332,682,742      cycles                    #    4.663 GHz                      ( +-  0.01% )
+   388,474,484,071      instructions              #    1.81  insn per cycle           ( +-  0.22% )
+    73,601,803,480      branches                  #    1.601 G/sec                    ( +-  0.22% )
+        15,472,605      branch-misses             #    0.02% of all branches          ( +-  2.14% )
+
+          45.97896 +- 0.00457 seconds time elapsed  ( +-  0.01% )
+
+###
+###OPENCL
+setup time: 3.259207
+kernel time: 43.214204
+setup time: 3.246534
+kernel time: 43.189122
+setup time: 3.246246
+kernel time: 43.220030
+setup time: 3.238271
+kernel time: 43.209342
+setup time: 3.247086
+kernel time: 43.217072
+setup time: 3.246692
+kernel time: 43.225773
+setup time: 3.234239
+kernel time: 43.201212
+setup time: 3.244297
+kernel time: 43.223523
+setup time: 3.241421
+kernel time: 43.217293
+setup time: 3.240597
+kernel time: 43.221700
+setup time: 3.242913
+kernel time: 43.217947
+setup time: 3.261471
+kernel time: 43.203331
+setup time: 3.278068
+kernel time: 43.228312
+setup time: 3.246609
+kernel time: 43.230630
+setup time: 3.269909
+kernel time: 43.221802
+setup time: 3.243537
+kernel time: 43.211297
+setup time: 3.249681
+kernel time: 43.182086
+setup time: 3.266386
+kernel time: 43.220068
+setup time: 3.236181
+kernel time: 43.211168
+setup time: 3.243984
+kernel time: 43.216929
+
+ Performance counter stats for './opencl/opencl 13312 1' (20 runs):
+
+         46,640.30 msec task-clock                #    1.000 CPUs utilized            ( +-  0.01% )
+               789      context-switches          #   16.918 /sec                     ( +-  3.20% )
+                 2      cpu-migrations            #    0.043 /sec                     ( +- 17.36% )
+           868,709      page-faults               #   18.627 K/sec                    ( +-  0.00% )
+   217,484,645,641      cycles                    #    4.663 GHz                      ( +-  0.01% )
+   374,697,536,356      instructions              #    1.72  insn per cycle           ( +-  0.32% )
+    70,199,188,022      branches                  #    1.505 G/sec                    ( +-  0.31% )
+        15,467,991      branch-misses             #    0.02% of all branches          ( +-  5.59% )
+
+          46.65989 +- 0.00423 seconds time elapsed  ( +-  0.01% )
+
+###
+ARR_SIZE:14336
+###HIP
+setup time: 3.251881
+kernel time: 53.906796
+setup time: 3.212669
+kernel time: 53.896471
+setup time: 3.215410
+kernel time: 53.873171
+setup time: 3.254756
+kernel time: 53.891768
+setup time: 3.216149
+kernel time: 53.868209
+setup time: 3.214175
+kernel time: 53.903795
+setup time: 3.212295
+kernel time: 53.896476
+setup time: 3.214296
+kernel time: 53.891792
+setup time: 3.209978
+kernel time: 53.886054
+setup time: 3.210403
+kernel time: 53.889461
+setup time: 3.215386
+kernel time: 53.894850
+setup time: 3.242968
+kernel time: 53.899276
+setup time: 3.240845
+kernel time: 53.912675
+setup time: 3.214794
+kernel time: 53.903299
+setup time: 3.230298
+kernel time: 53.885410
+setup time: 3.268878
+kernel time: 53.886452
+setup time: 3.249250
+kernel time: 53.900399
+setup time: 3.234625
+kernel time: 53.902733
+setup time: 3.237626
+kernel time: 53.890653
+setup time: 3.229106
+kernel time: 53.878120
+
+ Performance counter stats for './hip/hip 14336 1' (20 runs):
+
+         57,302.38 msec task-clock                #    0.999 CPUs utilized            ( +-  0.01% )
+             1,365      context-switches          #   23.813 /sec                     ( +-  2.59% )
+                 6      cpu-migrations            #    0.105 /sec                     ( +- 11.50% )
+           604,109      page-faults               #   10.539 K/sec                    ( +-  0.00% )
+   267,356,382,658      cycles                    #    4.664 GHz                      ( +-  0.01% )
+   487,928,670,568      instructions              #    1.82  insn per cycle           ( +-  0.24% )
+    92,324,668,948      branches                  #    1.611 G/sec                    ( +-  0.24% )
+        18,556,010      branch-misses             #    0.02% of all branches          ( +-  3.00% )
+
+          57.34151 +- 0.00515 seconds time elapsed  ( +-  0.01% )
+
+###
+###OPENCL
+setup time: 3.774607
+kernel time: 54.140048
+setup time: 3.743181
+kernel time: 54.141531
+setup time: 3.727888
+kernel time: 54.156562
+setup time: 3.763579
+kernel time: 54.135759
+setup time: 3.753110
+kernel time: 54.132891
+setup time: 3.741523
+kernel time: 54.107795
+setup time: 3.729177
+kernel time: 54.159952
+setup time: 3.766895
+kernel time: 54.147192
+setup time: 3.770941
+kernel time: 54.161828
+setup time: 3.751729
+kernel time: 54.155856
+setup time: 3.777255
+kernel time: 54.148371
+setup time: 3.745668
+kernel time: 54.156167
+setup time: 3.761025
+kernel time: 54.162947
+setup time: 3.762968
+kernel time: 54.163827
+setup time: 3.770453
+kernel time: 54.160710
+setup time: 3.747132
+kernel time: 54.171660
+setup time: 3.777769
+kernel time: 54.163799
+setup time: 3.756437
+kernel time: 54.146600
+setup time: 3.741841
+kernel time: 54.164675
+setup time: 3.732452
+kernel time: 54.150397
+
+ Performance counter stats for './opencl/opencl 14336 1' (20 runs):
+
+         58,082.21 msec task-clock                #    0.999 CPUs utilized            ( +-  0.01% )
+             1,000      context-switches          #   17.209 /sec                     ( +-  0.69% )
+                 2      cpu-migrations            #    0.034 /sec                     ( +- 17.12% )
+         1,006,952      page-faults               #   17.329 K/sec                    ( +-  0.00% )
+   271,003,252,907      cycles                    #    4.664 GHz                      ( +-  0.01% )
+   464,026,027,066      instructions              #    1.71  insn per cycle           ( +-  0.34% )
+    86,822,128,482      branches                  #    1.494 G/sec                    ( +-  0.33% )
+        17,051,058      branch-misses             #    0.02% of all branches          ( +-  5.96% )
+
+          58.12923 +- 0.00507 seconds time elapsed  ( +-  0.01% )
+
+###
+ARR_SIZE:15360
+###HIP
+setup time: 3.706450
+kernel time: 67.376807
+setup time: 3.680255
+kernel time: 67.412281
+setup time: 3.684771
+kernel time: 67.414022
+setup time: 3.681012
+kernel time: 67.392476
+setup time: 3.696597
+kernel time: 67.374431
+setup time: 3.692770
+kernel time: 67.436846
+setup time: 3.683196
+kernel time: 67.413941
+setup time: 3.710784
+kernel time: 67.402370
+setup time: 3.709247
+kernel time: 67.417078
+setup time: 3.694577
+kernel time: 67.403625
+setup time: 3.736947
+kernel time: 67.408835
+setup time: 3.705739
+kernel time: 67.396677
+setup time: 3.707955
+kernel time: 67.411870
+setup time: 3.681702
+kernel time: 67.405041
+setup time: 3.683830
+kernel time: 67.410621
+setup time: 3.672308
+kernel time: 67.409971
+setup time: 3.684131
+kernel time: 67.420580
+setup time: 3.686262
+kernel time: 67.419839
+setup time: 3.684204
+kernel time: 67.408256
+setup time: 3.704182
+kernel time: 67.354505
+
+ Performance counter stats for './hip/hip 15360 1' (20 runs):
+
+         71,296.51 msec task-clock                #    0.999 CPUs utilized            ( +-  0.01% )
+             1,290      context-switches          #   18.084 /sec                     ( +-  0.95% )
+                 7      cpu-migrations            #    0.098 /sec                     ( +-  9.44% )
+           693,201      page-faults               #    9.718 K/sec                    ( +-  0.00% )
+   332,961,246,161      cycles                    #    4.668 GHz                      ( +-  0.01% )
+   609,655,822,836      instructions              #    1.83  insn per cycle           ( +-  0.32% )
+   115,211,092,556      branches                  #    1.615 G/sec                    ( +-  0.32% )
+        23,744,590      branch-misses             #    0.02% of all branches          ( +-  3.08% )
+
+          71.34843 +- 0.00459 seconds time elapsed  ( +-  0.01% )
+
+###
+###OPENCL
+setup time: 4.300746
+kernel time: 67.668254
+setup time: 4.269202
+kernel time: 67.702229
+setup time: 4.270821
+kernel time: 67.704052
+setup time: 4.294685
+kernel time: 67.687966
+setup time: 4.281623
+kernel time: 67.637034
+setup time: 4.272241
+kernel time: 67.660751
+setup time: 4.272994
+kernel time: 67.701449
+setup time: 4.301098
+kernel time: 67.702990
+setup time: 4.283518
+kernel time: 67.708910
+setup time: 4.269876
+kernel time: 67.662125
+setup time: 4.268074
+kernel time: 67.667080
+setup time: 4.276696
+kernel time: 67.716651
+setup time: 4.268219
+kernel time: 67.699176
+setup time: 4.271054
+kernel time: 67.694492
+setup time: 4.297016
+kernel time: 67.675306
+setup time: 4.262988
+kernel time: 67.666466
+setup time: 4.285445
+kernel time: 67.681137
+setup time: 4.265410
+kernel time: 67.665349
+setup time: 4.275273
+kernel time: 67.711585
+setup time: 4.270083
+kernel time: 67.696222
+
+ Performance counter stats for './opencl/opencl 15360 1' (20 runs):
+
+         72,190.18 msec task-clock                #    1.000 CPUs utilized            ( +-  0.01% )
+             1,582      context-switches          #   21.913 /sec                     ( +-  3.16% )
+                 5      cpu-migrations            #    0.069 /sec                     ( +- 12.18% )
+         1,155,432      page-faults               #   16.004 K/sec                    ( +-  0.00% )
+   337,842,735,756      cycles                    #    4.680 GHz                      ( +-  0.01% )
+   593,349,889,856      instructions              #    1.76  insn per cycle           ( +-  0.28% )
+   110,810,699,556      branches                  #    1.535 G/sec                    ( +-  0.28% )
+        19,871,848      branch-misses             #    0.02% of all branches          ( +-  0.99% )
+
+          72.21961 +- 0.00557 seconds time elapsed  ( +-  0.01% )
+
+###
+ARR_SIZE:16384
+###HIP
+setup time: 4.192361
+kernel time: 81.598940
+setup time: 4.162139
+kernel time: 81.575236
+setup time: 4.170088
+kernel time: 81.640188
+setup time: 4.198849
+kernel time: 81.622017
+setup time: 4.227105
+kernel time: 81.619104
+setup time: 4.169055
+kernel time: 81.620228
+setup time: 4.193274
+kernel time: 81.583029
+setup time: 4.170967
+kernel time: 81.630942
+setup time: 4.168223
+kernel time: 81.537519
+setup time: 4.182041
+kernel time: 81.628805
+setup time: 4.172169
+kernel time: 81.633388
+setup time: 4.183643
+kernel time: 81.624025
+setup time: 4.201890
+kernel time: 81.609689
+setup time: 4.196798
+kernel time: 81.561744
+setup time: 4.183446
+kernel time: 81.625334
+setup time: 4.183474
+kernel time: 81.600319
+setup time: 4.166467
+kernel time: 81.632256
+setup time: 4.161199
+kernel time: 81.664027
+setup time: 4.158697
+kernel time: 81.592535
+setup time: 4.162575
+kernel time: 81.655990
+
+ Performance counter stats for './hip/hip 16384 1' (20 runs):
+
+         86,079.80 msec task-clock                #    1.000 CPUs utilized            ( +-  0.01% )
+             1,885      context-switches          #   21.903 /sec                     ( +-  1.95% )
+                 6      cpu-migrations            #    0.070 /sec                     ( +- 11.74% )
+           788,429      page-faults               #    9.161 K/sec                    ( +-  0.00% )
+   401,956,030,674      cycles                    #    4.671 GHz                      ( +-  0.01% )
+   728,019,306,984      instructions              #    1.81  insn per cycle           ( +-  0.33% )
+   137,485,460,247      branches                  #    1.598 G/sec                    ( +-  0.32% )
+        33,053,739      branch-misses             #    0.02% of all branches          ( +-  1.89% )
+
+          86.07711 +- 0.00749 seconds time elapsed  ( +-  0.01% )
+
+###
+###OPENCL
+setup time: 4.956040
+kernel time: 81.888081
+setup time: 4.849481
+kernel time: 81.948564
+setup time: 4.856722
+kernel time: 81.898754
+setup time: 4.883624
+kernel time: 81.892957
+setup time: 4.868633
+kernel time: 81.937841
+setup time: 4.854595
+kernel time: 81.958254
+setup time: 4.852675
+kernel time: 81.932743
+setup time: 4.863993
+kernel time: 81.963942
+setup time: 4.840214
+kernel time: 81.891131
+setup time: 4.871078
+kernel time: 81.918248
+setup time: 4.856349
+kernel time: 81.944272
+setup time: 4.840033
+kernel time: 81.946222
+setup time: 4.852405
+kernel time: 81.963577
+setup time: 4.853872
+kernel time: 81.908517
+setup time: 4.846292
+kernel time: 81.923828
+setup time: 4.858069
+kernel time: 81.908899
+setup time: 4.859985
+kernel time: 81.936899
+setup time: 4.847588
+kernel time: 81.925043
+setup time: 4.881114
+kernel time: 81.927321
+setup time: 4.861434
+kernel time: 81.986309
+
+ Performance counter stats for './opencl/opencl 16384 1' (20 runs):
+
+         87,114.29 msec task-clock                #    1.000 CPUs utilized            ( +-  0.01% )
+             1,515      context-switches          #   17.403 /sec                     ( +-  3.70% )
+                 2      cpu-migrations            #    0.023 /sec                     ( +- 15.51% )
+         1,314,147      page-faults               #   15.096 K/sec                    ( +-  0.00% )
+   407,646,054,792      cycles                    #    4.683 GHz                      ( +-  0.01% )
+   708,933,681,963      instructions              #    1.74  insn per cycle           ( +-  0.35% )
+   132,287,608,729      branches                  #    1.520 G/sec                    ( +-  0.34% )
+        22,752,729      branch-misses             #    0.02% of all branches          ( +-  1.08% )
+
+          87.07794 +- 0.00666 seconds time elapsed  ( +-  0.01% )
+
+###

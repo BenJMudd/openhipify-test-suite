@@ -1,14 +1,14 @@
 #!/bin/sh
 
-for i in $(seq 10 10 100);
+for i in $(seq 1024 1024 16384);
 do
-	echo "ITERATIONS:$i"
+	echo "ARR_SIZE:$i"
 	echo "###HIP"
-	perf stat ./hip/hip 4096 $i
+	perf stat -r 20 ./hip/hip $i 1
 	echo "###"
        sleep 2	
 	echo "###OPENCL"
-	perf stat ./opencl/opencl 4096 $i
+	perf stat -r 20 ./opencl/opencl $i 1
 	echo "###"
        sleep 2	
 done

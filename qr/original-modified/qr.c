@@ -26,7 +26,8 @@ int main() {
   cl_program program;
   cl_kernel kernel;
   size_t global_size, local_size;
-  cl_int err, i, j, k, check;
+  cl_int err;
+  int i, j, k, check;
 
   /* Data and buffers */
   float a_mat[MATRIX_DIM][MATRIX_DIM], q_mat[MATRIX_DIM][MATRIX_DIM],
@@ -45,7 +46,7 @@ int main() {
   /* Create a device and context */
   device = create_device();
   context = clCreateContext(NULL, 1, &device, NULL, NULL, &err);
-  if (err < 0) {
+  if (err != CL_SUCCESS) {
     perror("Couldn't create a context");
     exit(1);
   }
@@ -55,7 +56,7 @@ int main() {
 
   /* Create a kernel */
   kernel = clCreateKernel(program, KERNEL_FUNC, &err);
-  if (err < 0) {
+  if (err != CL_SUCCESS) {
     perror("Couldn't create a kernel");
     exit(1);
   };
@@ -63,7 +64,7 @@ int main() {
   /* Create buffer */
   a_buffer = clCreateBuffer(context, CL_MEM_READ_WRITE | CL_MEM_COPY_HOST_PTR,
                             sizeof(a_mat), a_mat, &err);
-  if (err < 0) {
+  if (err != CL_SUCCESS) {
     perror("Couldn't create a buffer");
     exit(1);
   };
@@ -80,14 +81,14 @@ int main() {
   err |= clSetKernelArg(kernel, 2, sizeof(cl_mem), &q_buffer);
   err |= clSetKernelArg(kernel, 3, sizeof(cl_mem), &p_buffer);
   err |= clSetKernelArg(kernel, 4, sizeof(cl_mem), &prod_buffer);
-  if (err < 0) {
+  if (err != CL_SUCCESS) {
     printf("Couldn't set a kernel argument");
     exit(1);
   };
 
   /* Create a command queue */
   queue = clCreateCommandQueue(context, device, 0, &err);
-  if (err < 0) {
+  if (err != CL_SUCCESS) {
     perror("Couldn't create a command queue");
     exit(1);
   };
@@ -97,7 +98,7 @@ int main() {
   local_size = MATRIX_DIM;
   err = clEnqueueNDRangeKernel(queue, kernel, 1, NULL, &global_size,
                                &local_size, 0, NULL, NULL);
-  if (err < 0) {
+  if (err != CL_SUCCESS) {
     perror("Couldn't enqueue the kernel");
     exit(1);
   }
@@ -107,7 +108,7 @@ int main() {
                             0, NULL, NULL);
   err |= clEnqueueReadBuffer(queue, a_buffer, CL_TRUE, 0, sizeof(r_mat), r_mat,
                              0, NULL, NULL);
-  if (err < 0) {
+  if (err != CL_SUCCESS) {
     perror("Couldn't read the buffers");
     exit(1);
   }
